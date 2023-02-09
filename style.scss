@@ -1,0 +1,516 @@
+@import "bootstrap/scss/bootstrap";
+@import "/scss/variables";
+@import "/scss/mixins";
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+#content {
+}
+
+// Style for header
+%icon {
+  @include medium-down {
+    margin-left: 0;
+  }
+  margin-left: 16px;
+  cursor: pointer;
+  padding: 0 8px;
+  position: relative;
+
+  &:hover {
+    .icon {
+      color: red;
+    }
+
+    .show {
+      visibility: visible;
+      transform: translateY(40px);
+      transition: all 0.3s ease;
+      opacity: 1;
+    }
+  }
+}
+
+%icon-hover {
+  background-color: #fff;
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 8px 16px;
+  transition: all 0.3s ease;
+  transform: translateY(80px);
+  opacity: 0;
+  visibility: hidden;
+  box-shadow: 2px 2px 5px #888888;
+
+  &::after {
+    content: "";
+    width: 48px;
+    height: 16px;
+    position: absolute;
+    background-color: transparent;
+    top: -16px;
+    right: 8px;
+  }
+}
+
+.header {
+  background-color: $bg-gray;
+  transition: background-color 0.3s ease;
+  font-size: 14px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  font-family: $font-family;
+  z-index: 100;
+  &-inner {
+    &__logo {
+      background-color: $white-color;
+      img {
+        width: 269px;
+        height: 134px;
+        @include medium-down {
+          width: 200px;
+          height: 100px;
+        }
+        @include extra-small {
+          width: 100px;
+          height: 50px;
+        }
+      }
+    }
+
+    &__menu {
+      @include medium-down {
+        display: none;
+      }
+
+      display: flex;
+      padding: 16px 64px;
+      background-color: $white-color;
+      a {
+        font-size: 14px;
+        text-transform: uppercase;
+        font-weight: 700;
+        color: $title-color;
+        margin-right: 32px;
+        &:hover {
+          color: $primary-color;
+        }
+      }
+    }
+
+    &__icon {
+      padding: 16px 64px;
+      @include medium-down {
+        padding: 16px 0;
+      }
+
+      i {
+        font-size: 20px;
+        @include small-down {
+          font-size: 14px;
+        }
+      }
+
+      &-search {
+        @extend %icon;
+
+        &--input {
+          width: 360px;
+          @extend %icon-hover;
+          right: -32px;
+          @include medium-down {
+            width: 260px;
+          }
+
+          input {
+            border: none;
+            background-color: #fff;
+            outline: none;
+            width: 90%;
+          }
+        }
+      }
+
+      &-account {
+        @extend %icon;
+
+        &--list {
+          text-align: right;
+          width: 180px;
+          @extend %icon-hover;
+
+          div a {
+            display: block;
+            padding: 6px 0;
+            border-bottom: 1px solid $bg-gray;
+            color: $title-color;
+            &:hover {
+              color: $primary-color;
+            }
+          }
+        }
+      }
+
+      &-cart {
+        @extend %icon;
+
+        &--detail {
+          width: 480px;
+          color: $text-color;
+          @include medium-down {
+            width: 260px;
+          }
+          @extend %icon-hover;
+
+          p {
+          }
+
+          h5 {
+            font-weight: 600;
+            font-size: 18px;
+          }
+
+          h4 {
+            font-weight: 600;
+          }
+        }
+      }
+
+      &-menu {
+        @extend %icon;
+        display: none;
+
+        @include medium-down {
+          display: flex;
+        }
+
+        div {
+          color: $primary-color;
+          font-weight: 500;
+          font-size: 18px;
+        }
+
+        &--list {
+          @include medium-down {
+            width: 260px;
+          }
+          @extend %icon-hover;
+          a {
+            display: block;
+            font-size: 14px;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: $title-color;
+            padding: 6px 0;
+            border-bottom: 1px solid $bg-gray;
+            &:hover {
+              color: $primary-color;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Style for footer
+
+.footer-top {
+  font-family: $font-family;
+
+  @include medium-up {
+    background: linear-gradient(90deg, #f5f5f5 50%, #eae8e8 50%);
+  }
+
+  @include medium-down {
+    background: linear-gradient(180deg, #f5f5f5 50%, #eae8e8 50%);
+  }
+
+  &__newsletter {
+    @include medium-up {
+      padding: 48px 24px 48px;
+    }
+
+    @include medium-down {
+      padding: 48px 0 48px;
+    }
+
+    &-line {
+      width: 100%;
+      height: 1px;
+      background-color: $line-color;
+      margin-bottom: 16px;
+    }
+
+    &-icon {
+      i {
+        font-size: 32px;
+        margin-right: 8px;
+      }
+
+      P {
+        font-size: 16px;
+        text-transform: uppercase;
+        margin: 0;
+      }
+    }
+
+    &-desc {
+      font-size: 14px;
+      color: $text-color;
+      margin: 8px 0 32px 0;
+    }
+
+    &-form {
+      width: 100%;
+      background-color: $white-color;
+      display: flex;
+      font-size: 14px;
+
+      input {
+        border: none;
+        outline: none;
+        width: 85%;
+        padding: 8px 16px;
+      }
+
+      button {
+        height: 100%;
+        background-color: #000;
+        color: $white-color;
+        padding: 8px 16px;
+      }
+    }
+
+    &-icon {
+      %wrap-footer-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        text-align: center;
+        padding: auto;
+        margin-right: 16px;
+        &:hover {
+          background-color: $primary-color;
+          cursor: pointer;
+        }
+      }
+      %footer-icon {
+        color: #fff;
+        font-size: 18px;
+        line-height: 40px;
+        margin: 0;
+      }
+
+      &--fb {
+        @extend %wrap-footer-icon;
+        background-color: #5472d2;
+
+        i {
+          @extend %footer-icon;
+        }
+      }
+
+      &--rss {
+        @extend %wrap-footer-icon;
+        background-color: #f79468;
+
+        i {
+          @extend %footer-icon;
+        }
+      }
+
+      &--tw {
+        @extend %wrap-footer-icon;
+        background-color: #4cadc9;
+
+        i {
+          @extend %footer-icon;
+        }
+      }
+
+      &--gg {
+        @extend %wrap-footer-icon;
+        background-color: #e04a39;
+
+        i {
+          @extend %footer-icon;
+        }
+      }
+    }
+  }
+
+  &__followus {
+  }
+}
+
+.footer-bottom {
+  font-family: $font-family;
+
+  @include medium-up {
+    background: linear-gradient(90deg, #232222 50%, #1d1d1d 50%);
+  }
+
+  @include medium-down {
+    background: linear-gradient(180deg, #232222 50%, #1d1d1d 50%);
+  }
+
+  &__contact {
+    padding: 48px 16px;
+    height: 360px;
+
+    img {
+      margin-bottom: 32px;
+    }
+    i {
+      color: $text-color;
+      margin-right: 16px;
+    }
+    p {
+      color: $text-color;
+    }
+  }
+
+  &__line {
+    width: 100%;
+    height: 1px;
+    background-color: $line-color;
+    margin-bottom: 12px;
+  }
+
+  &__title {
+    color: $text-color;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 32px;
+  }
+
+  li {
+    border-bottom: 1px solid #594b4b;
+    padding: 8px 0;
+
+    i {
+      color: #b6b6b6;
+      font-size: 10px;
+    }
+
+    a {
+      color: #b6b6b6;
+      font-size: 14px;
+    }
+
+    &:hover {
+      i,
+      a {
+        color: $primary-color;
+      }
+    }
+  }
+}
+
+// define class for slider footer bottom
+.slidy-footer {
+  transition: all 0.8s ease;
+  animation: 10s slidy infinite;
+}
+
+@keyframes slidy {
+  0% {
+    top: 200px;
+    opacity: 0;
+  }
+
+  25% {
+    top: 8px;
+    opacity: 1;
+  }
+
+  50% {
+    top: 8px;
+    opacity: 1;
+  }
+
+  80% {
+    top: 8px;
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    top: -200px;
+  }
+}
+
+.footer-bottom__circle-slide {
+  height: 160px;
+  overflow: hidden;
+  position: relative;
+  font-size: 14px;
+
+  a {
+    color: $primary-color;
+  }
+
+  &--item1 {
+    position: absolute;
+    top: 200px;
+  }
+
+  &--item2 {
+    position: absolute;
+    top: 200px;
+  }
+
+  &--item3 {
+    position: absolute;
+    top: 200px;
+  }
+}
+
+// Style for go to top button
+@include medium-down {
+  .go-to-top {
+    display: none;
+  }
+}
+
+@include medium-up {
+  .go-to-top {
+    border: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #999999;
+    width: 40px;
+    height: 40px;
+    color: #fff;
+    transition: all 0.8s ease;
+    opacity: 0;
+    transform: translateY(80px);
+    i {
+      font-size: 18px;
+    }
+    &:hover {
+      background-color: $primary-color;
+    }
+  }
+
+  .go-to-top.active {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}

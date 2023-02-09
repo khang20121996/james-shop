@@ -1,0 +1,164 @@
+@import "bootstrap/scss/bootstrap";
+@import "/scss/variables";
+@import "/scss/mixins";
+.shop {
+    font-family: $font-family;
+    padding: 24px 0;
+
+    a {
+        transition: all 0.4s ease;
+    }
+}
+
+.shop .sidebar {
+    &__path {
+        font-size: 12px;
+        a {
+            color: $text-color;
+            &:hover {
+                color: $primary-color;
+            }
+        }
+
+        span {
+            color: #000;
+        }
+    }
+
+    h3 {
+        text-transform: uppercase;
+        font-size: 17px;
+        font-weight: 400;
+        color: #000;
+        padding: 6px 0;
+        border-bottom: 1px solid $border-color;
+        margin: 16px 0px 24px 0;
+    }
+
+    &__categories {
+    }
+
+    &__category-item {
+        margin: 8px 0;
+        a {
+            font-size: 13px;
+            color: #000;
+            &:hover {
+                color: $primary-color;
+            }
+        }
+
+        span {
+            font-size: 13px;
+            color: $text-color;
+        }
+    }
+
+    &__filter-by-price {
+        margin-top: 16px;
+        &--slider {
+            width: 100%;
+            height: 5px;
+            background: #bababa;
+            position: relative;
+        }
+
+        &--progress {
+            position: absolute;
+            left: 0;
+            right: 0;
+            background-color: $primary-color;
+            height: 100%;
+            border-radius: 5px;
+        }
+
+        &--range-input {
+            position: relative;
+            margin-bottom: 46px;
+
+            input[type="range"] {
+                position: absolute;
+                top: -5px;
+                width: 100%;
+                height: 5px;
+                -webkit-appearance: none;
+                pointer-events: none;
+                background: none;
+                outline: none;
+                cursor: pointer;
+            }
+
+            input[type="range"]::-webkit-slider-thumb {
+                pointer-events: auto;
+                -webkit-appearance: none;
+                width: 14px;
+                height: 14px;
+                background-color: $primary-color;
+                border-radius: 50%;
+            }
+
+            input[type="range"]::-moz-range-thumb {
+                pointer-events: auto;
+                -moz-appearance: none;
+                width: 14px;
+                height: 14px;
+                background-color: $primary-color;
+                border-radius: 50%;
+                border: none;
+            }
+        }
+
+        &--field {
+            align-items: center;
+            button {
+                text-transform: uppercase;
+                padding: 8px;
+                color: $text-color;
+                border: 1px solid $border-color;
+                background-color: transparent;
+                transition: all 0.3s ease;
+                font-size: 14px;
+                &:hover {
+                    background-color: $primary-color;
+                    color: $white-color;
+                }
+            }
+
+            p {
+                color: $text-color;
+                font-size: 12px;
+                margin: 0 8px;
+            }
+
+            &-min,
+            &-max {
+                text-align: center;
+                width: 60px;
+                padding: 7px 0;
+                color: $text-color;
+                border: 1px solid $border-color;
+                font-weight: bold;
+                margin: 0 6px;
+            }
+        }
+    }
+
+    &__filter-by-color {
+        li {
+            margin: 8px 0;
+        }
+
+        a {
+            font-size: 13px;
+            color: #000;
+            &:hover {
+                color: $primary-color;
+            }
+        }
+
+        span {
+            font-size: 13px;
+            color: $text-color;
+        }
+    }
+}
