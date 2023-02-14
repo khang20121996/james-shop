@@ -33,6 +33,12 @@ const urlRoutes = {
     description: "",
   },
 
+  "/shop/detail": {
+    template: "/pages/shop/product-detail/index.html",
+    title: "",
+    description: "",
+  },
+
   "/blog": {
     template: "/pages/blog/index.html",
     title: "",
@@ -55,6 +61,7 @@ const urlLocationHanler = async () => {
 
   const route = urlRoutes[location] || urlRoutes[404];
   const html = await fetch(route.template).then((response) => response.text());
+
   document.getElementById("root").innerHTML = html;
   console.log("route-complete");
 };
@@ -63,3 +70,5 @@ window.onpopstate = urlLocationHanler;
 window.route = urlRoute;
 
 urlLocationHanler();
+
+export default urlLocationHanler;

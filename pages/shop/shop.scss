@@ -162,3 +162,197 @@
         }
     }
 }
+
+.product-list {
+    padding-top: 36px;
+    &__line {
+        width: 100%;
+        height: 1px;
+        background-color: $border-color;
+        margin-bottom: 16px;
+    }
+
+    &__sort {
+        font-size: 12px;
+
+        span {
+            margin-right: 24px;
+        }
+
+        padding: 10px 12px;
+        border: 1px solid $border-color;
+        margin-right: 16px;
+
+        &-select {
+            position: relative;
+            cursor: pointer;
+
+            &-list {
+                position: absolute;
+                top: 36px;
+                right: -12px;
+                width: 184px;
+                box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+                background-color: #fff;
+                display: none;
+                z-index: 101;
+
+                li {
+                    padding: 8px;
+                    cursor: pointer;
+                    text-align: right;
+                    &:hover {
+                        color: $white-color;
+                        background-color: $bg-gray;
+                    }
+                }
+            }
+
+            i {
+                padding-left: 6px;
+            }
+
+            span {
+                margin: 0;
+            }
+        }
+    }
+
+    &__icon {
+        width: 40px;
+        height: 40px;
+        border: 1px solid #eaeaea;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        transition: 0.2s all ease;
+        margin-left: 6px;
+
+        i {
+            font-size: 28px;
+            color: $bg-gray;
+        }
+
+        &:hover {
+            background-color: $primary-color;
+            border: 1px solid $primary-color;
+
+            i {
+                color: $white-color;
+            }
+        }
+    }
+
+    &__icon-wrap {
+        .active {
+            background-color: $primary-color;
+            border-color: $primary-color;
+
+            i {
+                color: $white-color;
+            }
+        }
+    }
+
+    &__pagination {
+        &-item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 2px;
+
+            &-link {
+                color: $primary-color;
+                border: 1px solid $border-color;
+                padding: 6px 14px;
+                font-size: 14px;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: $primary-color;
+                    color: $white-color;
+                }
+
+                i {
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+}
+
+.shop .featured-product-list {
+    margin-top: 32px;
+}
+
+.shop .featured-product__item {
+    margin: 0 0 24px 0;
+    transition: all 0.2s ease;
+}
+
+// style for list item product
+// .featured-product__item-detail {
+//     display: none;
+// }
+
+.shop .featured-product__item--list {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+
+    .featured-product__item-link {
+        width: 30%;
+
+        img {
+            transition: all 0.3s ease;
+        }
+
+        .featured-product__item-link--cart,
+        .featured-product__item-link--view,
+        .featured-product__item-link--wishlist {
+            opacity: 1;
+            bottom: 0;
+            visibility: visible;
+        }
+    }
+
+    .featured-product__item-detail {
+        width: 70%;
+        padding: 0 32px;
+
+        .featured-product__item-name {
+            margin-bottom: 8px;
+        }
+
+        .featured-product__item-start-rate {
+            margin-bottom: 16px;
+        }
+
+        .featured-product__item-wrap--price {
+            display: block;
+            p {
+                margin: 0 0 8px 0;
+            }
+        }
+
+        .featured-product__item-description {
+            display: block;
+            font-size: 13px;
+            color: $text-color;
+        }
+    }
+
+    @include small-down {
+        flex-direction: column;
+
+        .featured-product__item-link {
+            width: 100%;
+        }
+
+        .featured-product__item-detail {
+            width: 100%;
+            padding: 0;
+        }
+    }
+}

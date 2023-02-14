@@ -1,0 +1,143 @@
+@import "bootstrap/scss/bootstrap";
+@import "/scss/variables";
+@import "/scss/mixins";
+
+.product-detail {
+    font-family: $font-family;
+
+    &__path {
+        font-size: 12px;
+        padding: 32px 0;
+
+        a {
+            transition: all 0.4s ease;
+            color: $text-color;
+            &:hover {
+                color: $primary-color;
+            }
+        }
+    }
+
+    &__img {
+        img {
+            width: 100%;
+        }
+    }
+
+    &__slick {
+        img {
+            width: 100%;
+        }
+    }
+
+    &__name {
+        font-size: 24px;
+        text-transform: uppercase;
+        font-weight: 400;
+        margin-bottom: 16px;
+    }
+
+    &__price {
+        text-decoration: line-through;
+        color: $text-color;
+        font-size: 24px;
+        font-weight: 500;
+        margin-right: 8px;
+    }
+
+    &__start-rate {
+        li i {
+            color: #ffb21e;
+            font-size: 12px;
+            margin-left: 2px;
+        }
+    }
+
+    &__discount {
+        color: $primary-color;
+        font-size: 24px;
+        font-weight: 500;
+    }
+
+    &__description {
+        font-size: 13px;
+        color: $text-color;
+    }
+
+    &__form {
+        margin: 32px 0;
+        input {
+            height: 57px;
+            background-color: #f7f7f7;
+            font-size: 20px;
+            text-align: center;
+            width: 75px;
+            border: 1px solid $border-color;
+            outline: none;
+            margin-right: 8px;
+        }
+
+        button {
+            height: 57px;
+            background-color: $primary-color;
+            text-align: center;
+            line-height: 57px;
+            color: $white-color;
+            font-size: 20px;
+            text-transform: uppercase;
+            border: 1px solid transparent;
+            padding: 0 35px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+
+            &:hover {
+                background-color: $title-color;
+            }
+        }
+    }
+
+    &__browse-list {
+        font-size: 13px;
+        background-color: #fff;
+        border: 1px solid $border-color;
+        height: 38px;
+        padding: 0 10px;
+        font-weight: 500;
+        margin-bottom: 32px;
+
+        &:hover {
+            background-color: $primary-color;
+            color: $white-color;
+        }
+    }
+
+    &__category {
+        margin-bottom: 24px;
+        font-weight: 700;
+        font-size: 13px;
+        text-transform: uppercase;
+        a {
+            text-transform: none;
+            font-weight: 500;
+            color: $text-color;
+
+            &:hover {
+                color: $primary-color;
+            }
+        }
+    }
+
+    &__line {
+        width: 100%;
+        height: 1px;
+        background-color: $border-color;
+        margin-bottom: 32px;
+    }
+
+    &__line--dashed {
+        width: 100%;
+        height: 1px;
+        margin: 16px 0 32px 0;
+        border-bottom: 2px dashed $border-color;
+    }
+}

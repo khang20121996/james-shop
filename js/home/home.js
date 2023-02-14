@@ -12,7 +12,7 @@ function handleAutoNavSlider() {
 }
 
 function hanldeFeatureProdSlick() {
-  $(".featured-product-list").slick({
+  $(".featured-product .featured-product-list").slick({
     infinite: true,
     speed: 300,
     slidesToShow: 4,
@@ -91,7 +91,7 @@ function main() {
   handleAutoNavSlider();
   hanldeFeatureProdSlick();
   hanldeBrandsSlick();
-  console.log("Home.js running");
+  console.log("Home loaded");
 }
 
 setTimeout(() => {
@@ -99,4 +99,4 @@ setTimeout(() => {
   if (location === "/") {
     main();
   }
-}, 1000);
+}, 3000);

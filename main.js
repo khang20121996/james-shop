@@ -1,3 +1,5 @@
+import urlLocationHanler from "./js/url-routes/urlRoutes";
+
 // handle header blur when user scrolling
 function handleBlurHeader() {
   const headerElement = document.querySelector("header");
@@ -68,13 +70,26 @@ function handleClickGotoTop() {
   });
 }
 
+function handlePreloader() {
+  setTimeout(() => {
+    const preLoaderElement = document.getElementById("preLoader");
+    if (!preLoaderElement) return;
+    preLoaderElement.style.display = "none";
+    console.log("loader stop");
+  }, 2000);
+}
+
+window.addEventListener("load", () => {
+  handlePreloader();
+});
+
 function main() {
   handleBlurHeader();
   handleClickGotoTop();
   handleCircleSlider();
-  console.log("Main running");
+  console.log("Main loaded");
 }
 
 setTimeout(() => {
   main();
-}, 1000);
+}, 3000);

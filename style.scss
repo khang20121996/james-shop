@@ -15,10 +15,7 @@ ul {
   margin: 0;
 }
 
-#content {
-}
-
-// Style for header
+/* Header style start */
 %icon {
   @include medium-down {
     margin-left: 0;
@@ -225,9 +222,9 @@ ul {
     }
   }
 }
+/* Header style end */
 
-// Style for footer
-
+/* Footer style start */
 .footer-top {
   font-family: $font-family;
 
@@ -481,7 +478,9 @@ ul {
   }
 }
 
-// Style for go to top button
+/* Footer style end */
+
+/* Go to top style start */
 @include medium-down {
   .go-to-top {
     display: none;
@@ -512,5 +511,23 @@ ul {
   .go-to-top.active {
     transform: translateY(0px);
     opacity: 1;
+  }
+}
+/* Go to top style end */
+
+/* Pre loader style start */
+#preLoader {
+  display: block;
+  background-color: $bg-gray;
+  z-index: 1000;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  text-align: center;
+  padding-top: 200px;
+
+  img {
+    width: 120px;
+    height: 120px;
   }
 }

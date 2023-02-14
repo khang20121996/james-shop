@@ -56,7 +56,7 @@
 
 <article class="container shop">
   <div class="row">
-    <aside class="col-lg-3 sidebar">
+    <aside class="col-lg-3 col-12 sidebar">
       <div class="sidebar__path">
         <a href="/">Home</a>
         <span> > </span>
@@ -106,7 +106,7 @@
 
       <h3>FEATURED PRODUCTS</h3>
       <!-- reuse product item from home page -->
-      <ul>
+      <ul class="sidebar__feature-product">
         <li>
           <div class="product-item d-flex product-item__border-bottom">
             <a href="/" class="product-item__img">
@@ -198,8 +198,550 @@
 
 
     </aside>
-    <section class="col-lg-8 product-list">
+    <section class="col-lg-9 col-12 product-list">
+      <div class="product-list__line"></div>
+      <div class="d-flex">
+        <div class="product-list__sort">Showing 1–16 of 35 results</div>
 
+        <div class="product-list__sort d-flex">
+          <span>Sort by</span>
+          <div class="product-list__sort-select">
+            <span class="product-list__sort-select-name">Default sorting</span>
+            <i class="fa-solid fa-chevron-down"></i>
+
+            <ul class="product-list__sort-select-list">
+              <li>Default sorting</li>
+              <li>Sort by popularity</li>
+              <li>Sort by average rating</li>
+              <li>Sort by newness</li>
+              <li>Sort by price: Low to hight</li>
+              <li>Sort by price: hight to low</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="product-list__icon-wrap ms-auto d-flex">
+          <div id="shopIconGrid" class="product-list__icon active">
+            <i class="fa-solid fa-grip"></i>
+          </div>
+          <div id="shopIconList" class="product-list__icon">
+            <i class="fa-solid fa-list"></i>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Reuse product item from feature product in home page -->
+      <div class="featured-product-list row" id="">
+        <!-- class="col-xl-3 col-md-6 featured-product__item--list" -->
+        <div class="featured-product__item-wrap col-xl-3 col-md-6">
+          <div class="featured-product__item ">
+            <a href="/" class="featured-product__item-link">
+              <img src="/images/home/feature-prod1.jpg" alt="feature-prod1" class="featured-product__item-img">
+              <!-- <img src="/images/home/feature-prod1.jpg" alt="feature-prod1" class="featured-product__item-img"> -->
+              <div class="featured-product__item-link--cart">Add to cart
+                <div class="featured-product__item-link--cart-detail">Add to cart</div>
+              </div>
+              <div class="featured-product__item-link--view">
+                <i class="fa-regular fa-eye"></i>
+                <div class="featured-product__item-link--view-detail">Quick View</div>
+              </div>
+              <div class="featured-product__item-link--wishlist">
+                <i class="fa-regular fa-heart"></i>
+                <div class="featured-product__item-link--wishlist-detail">Add to Wishlist</div>
+              </div>
+
+              <div class="featured-product__item-link--sale">
+                SALE
+              </div>
+            </a>
+
+            <div class="featured-product__item-detail">
+              <a href="#" class="featured-product__item-name">aenean sagittis</a>
+              <div class="featured-product__item-wrap--price">
+                <div class="d-flex">
+                  <p class="featured-product__item-sale">$90.00</p>
+                  <p class="featured-product__item-price">$75.00</p>
+                </div>
+                <ul class="featured-product__item-start-rate d-flex ms-auto">
+                  <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                  <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                  <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                  <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                  <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                </ul>
+                <p class="featured-product__item-description">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Sunt, consequuntur, numquam quisquam
+                  voluptas aliquid, excepturi beatae quas quo soluta at rem? Natus odio deleniti eveniet similique
+                  explicabo dolore fugit suscipit?
+                </p>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="featured-product__item-wrap col-xl-3 col-md-6">
+          <div class="featured-product__item ">
+            <a href="/" class="featured-product__item-link">
+              <img src="/images/home/feature-prod1.jpg" alt="feature-prod1" class="featured-product__item-img">
+              <!-- <img src="/images/home/feature-prod1.jpg" alt="feature-prod1" class="featured-product__item-img"> -->
+              <div class="featured-product__item-link--cart">Add to cart
+                <div class="featured-product__item-link--cart-detail">Add to cart</div>
+              </div>
+              <div class="featured-product__item-link--view">
+                <i class="fa-regular fa-eye"></i>
+                <div class="featured-product__item-link--view-detail">Quick View</div>
+              </div>
+              <div class="featured-product__item-link--wishlist">
+                <i class="fa-regular fa-heart"></i>
+                <div class="featured-product__item-link--wishlist-detail">Add to Wishlist</div>
+              </div>
+
+              <div class="featured-product__item-link--sale">
+                SALE
+              </div>
+            </a>
+
+            <div class="featured-product__item-detail">
+              <a href="#" class="featured-product__item-name">aenean sagittis</a>
+              <div class="featured-product__item-wrap--price">
+                <div class="d-flex">
+                  <p class="featured-product__item-sale">$90.00</p>
+                  <p class="featured-product__item-price">$75.00</p>
+                </div>
+                <ul class="featured-product__item-start-rate d-flex ms-auto">
+                  <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                  <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                  <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                  <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                  <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                </ul>
+                <p class="featured-product__item-description">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Sunt, consequuntur, numquam quisquam
+                  voluptas aliquid, excepturi beatae quas quo soluta at rem? Natus odio deleniti eveniet similique
+                  explicabo dolore fugit suscipit?
+                </p>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="featured-product__item-wrap col-xl-3 col-md-6">
+          <div class="featured-product__item ">
+            <a href="/" class="featured-product__item-link">
+              <img src="/images/home/feature-prod1.jpg" alt="feature-prod1" class="featured-product__item-img">
+              <!-- <img src="/images/home/feature-prod1.jpg" alt="feature-prod1" class="featured-product__item-img"> -->
+              <div class="featured-product__item-link--cart">Add to cart
+                <div class="featured-product__item-link--cart-detail">Add to cart</div>
+              </div>
+              <div class="featured-product__item-link--view">
+                <i class="fa-regular fa-eye"></i>
+                <div class="featured-product__item-link--view-detail">Quick View</div>
+              </div>
+              <div class="featured-product__item-link--wishlist">
+                <i class="fa-regular fa-heart"></i>
+                <div class="featured-product__item-link--wishlist-detail">Add to Wishlist</div>
+              </div>
+
+              <div class="featured-product__item-link--sale">
+                SALE
+              </div>
+            </a>
+
+            <div class="featured-product__item-detail">
+              <a href="#" class="featured-product__item-name">aenean sagittis</a>
+              <div class="featured-product__item-wrap--price">
+                <div class="d-flex">
+                  <p class="featured-product__item-sale">$90.00</p>
+                  <p class="featured-product__item-price">$75.00</p>
+                </div>
+                <ul class="featured-product__item-start-rate d-flex ms-auto">
+                  <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                  <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                  <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                  <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                  <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                </ul>
+                <p class="featured-product__item-description">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Sunt, consequuntur, numquam quisquam
+                  voluptas aliquid, excepturi beatae quas quo soluta at rem? Natus odio deleniti eveniet similique
+                  explicabo dolore fugit suscipit?
+                </p>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="featured-product__item-wrap col-xl-3 col-md-6">
+          <div class="featured-product__item ">
+            <a href="/" class="featured-product__item-link">
+              <img src="/images/home/feature-prod1.jpg" alt="feature-prod1" class="featured-product__item-img">
+              <!-- <img src="/images/home/feature-prod1.jpg" alt="feature-prod1" class="featured-product__item-img"> -->
+              <div class="featured-product__item-link--cart">Add to cart
+                <div class="featured-product__item-link--cart-detail">Add to cart</div>
+              </div>
+              <div class="featured-product__item-link--view">
+                <i class="fa-regular fa-eye"></i>
+                <div class="featured-product__item-link--view-detail">Quick View</div>
+              </div>
+              <div class="featured-product__item-link--wishlist">
+                <i class="fa-regular fa-heart"></i>
+                <div class="featured-product__item-link--wishlist-detail">Add to Wishlist</div>
+              </div>
+
+              <div class="featured-product__item-link--sale">
+                SALE
+              </div>
+            </a>
+
+            <div class="featured-product__item-detail">
+              <a href="#" class="featured-product__item-name">aenean sagittis</a>
+              <div class="featured-product__item-wrap--price">
+                <div class="d-flex">
+                  <p class="featured-product__item-sale">$90.00</p>
+                  <p class="featured-product__item-price">$75.00</p>
+                </div>
+                <ul class="featured-product__item-start-rate d-flex ms-auto">
+                  <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                  <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                  <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                  <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                  <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                </ul>
+                <p class="featured-product__item-description">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Sunt, consequuntur, numquam quisquam
+                  voluptas aliquid, excepturi beatae quas quo soluta at rem? Natus odio deleniti eveniet similique
+                  explicabo dolore fugit suscipit?
+                </p>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="featured-product__item-wrap col-xl-3 col-md-6">
+          <div class="featured-product__item ">
+            <a href="/" class="featured-product__item-link">
+              <img src="/images/home/feature-prod1.jpg" alt="feature-prod1" class="featured-product__item-img">
+              <!-- <img src="/images/home/feature-prod1.jpg" alt="feature-prod1" class="featured-product__item-img"> -->
+              <div class="featured-product__item-link--cart">Add to cart
+                <div class="featured-product__item-link--cart-detail">Add to cart</div>
+              </div>
+              <div class="featured-product__item-link--view">
+                <i class="fa-regular fa-eye"></i>
+                <div class="featured-product__item-link--view-detail">Quick View</div>
+              </div>
+              <div class="featured-product__item-link--wishlist">
+                <i class="fa-regular fa-heart"></i>
+                <div class="featured-product__item-link--wishlist-detail">Add to Wishlist</div>
+              </div>
+
+              <div class="featured-product__item-link--sale">
+                SALE
+              </div>
+            </a>
+
+            <div class="featured-product__item-detail">
+              <a href="#" class="featured-product__item-name">aenean sagittis</a>
+              <div class="featured-product__item-wrap--price">
+                <div class="d-flex">
+                  <p class="featured-product__item-sale">$90.00</p>
+                  <p class="featured-product__item-price">$75.00</p>
+                </div>
+                <ul class="featured-product__item-start-rate d-flex ms-auto">
+                  <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                  <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                  <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                  <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                  <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                </ul>
+                <p class="featured-product__item-description">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Sunt, consequuntur, numquam quisquam
+                  voluptas aliquid, excepturi beatae quas quo soluta at rem? Natus odio deleniti eveniet similique
+                  explicabo dolore fugit suscipit?
+                </p>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="featured-product__item-wrap col-xl-3 col-md-6">
+          <div class="featured-product__item ">
+            <a href="/" class="featured-product__item-link">
+              <img src="/images/home/feature-prod1.jpg" alt="feature-prod1" class="featured-product__item-img">
+              <!-- <img src="/images/home/feature-prod1.jpg" alt="feature-prod1" class="featured-product__item-img"> -->
+              <div class="featured-product__item-link--cart">Add to cart
+                <div class="featured-product__item-link--cart-detail">Add to cart</div>
+              </div>
+              <div class="featured-product__item-link--view">
+                <i class="fa-regular fa-eye"></i>
+                <div class="featured-product__item-link--view-detail">Quick View</div>
+              </div>
+              <div class="featured-product__item-link--wishlist">
+                <i class="fa-regular fa-heart"></i>
+                <div class="featured-product__item-link--wishlist-detail">Add to Wishlist</div>
+              </div>
+
+              <div class="featured-product__item-link--sale">
+                SALE
+              </div>
+            </a>
+
+            <div class="featured-product__item-detail">
+              <a href="#" class="featured-product__item-name">aenean sagittis</a>
+              <div class="featured-product__item-wrap--price">
+                <div class="d-flex">
+                  <p class="featured-product__item-sale">$90.00</p>
+                  <p class="featured-product__item-price">$75.00</p>
+                </div>
+                <ul class="featured-product__item-start-rate d-flex ms-auto">
+                  <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                  <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                  <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                  <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                  <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                </ul>
+                <p class="featured-product__item-description">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Sunt, consequuntur, numquam quisquam
+                  voluptas aliquid, excepturi beatae quas quo soluta at rem? Natus odio deleniti eveniet similique
+                  explicabo dolore fugit suscipit?
+                </p>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="featured-product__item-wrap col-xl-3 col-md-6">
+          <div class="featured-product__item ">
+            <a href="/" class="featured-product__item-link">
+              <img src="/images/home/feature-prod1.jpg" alt="feature-prod1" class="featured-product__item-img">
+              <!-- <img src="/images/home/feature-prod1.jpg" alt="feature-prod1" class="featured-product__item-img"> -->
+              <div class="featured-product__item-link--cart">Add to cart
+                <div class="featured-product__item-link--cart-detail">Add to cart</div>
+              </div>
+              <div class="featured-product__item-link--view">
+                <i class="fa-regular fa-eye"></i>
+                <div class="featured-product__item-link--view-detail">Quick View</div>
+              </div>
+              <div class="featured-product__item-link--wishlist">
+                <i class="fa-regular fa-heart"></i>
+                <div class="featured-product__item-link--wishlist-detail">Add to Wishlist</div>
+              </div>
+
+              <div class="featured-product__item-link--sale">
+                SALE
+              </div>
+            </a>
+
+            <div class="featured-product__item-detail">
+              <a href="#" class="featured-product__item-name">aenean sagittis</a>
+              <div class="featured-product__item-wrap--price">
+                <div class="d-flex">
+                  <p class="featured-product__item-sale">$90.00</p>
+                  <p class="featured-product__item-price">$75.00</p>
+                </div>
+                <ul class="featured-product__item-start-rate d-flex ms-auto">
+                  <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                  <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                  <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                  <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                  <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                </ul>
+                <p class="featured-product__item-description">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Sunt, consequuntur, numquam quisquam
+                  voluptas aliquid, excepturi beatae quas quo soluta at rem? Natus odio deleniti eveniet similique
+                  explicabo dolore fugit suscipit?
+                </p>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="featured-product__item-wrap col-xl-3 col-md-6">
+          <div class="featured-product__item ">
+            <a href="/" class="featured-product__item-link">
+              <img src="/images/home/feature-prod1.jpg" alt="feature-prod1" class="featured-product__item-img">
+              <!-- <img src="/images/home/feature-prod1.jpg" alt="feature-prod1" class="featured-product__item-img"> -->
+              <div class="featured-product__item-link--cart">Add to cart
+                <div class="featured-product__item-link--cart-detail">Add to cart</div>
+              </div>
+              <div class="featured-product__item-link--view">
+                <i class="fa-regular fa-eye"></i>
+                <div class="featured-product__item-link--view-detail">Quick View</div>
+              </div>
+              <div class="featured-product__item-link--wishlist">
+                <i class="fa-regular fa-heart"></i>
+                <div class="featured-product__item-link--wishlist-detail">Add to Wishlist</div>
+              </div>
+
+              <div class="featured-product__item-link--sale">
+                SALE
+              </div>
+            </a>
+
+            <div class="featured-product__item-detail">
+              <a href="#" class="featured-product__item-name">aenean sagittis</a>
+              <div class="featured-product__item-wrap--price">
+                <div class="d-flex">
+                  <p class="featured-product__item-sale">$90.00</p>
+                  <p class="featured-product__item-price">$75.00</p>
+                </div>
+                <ul class="featured-product__item-start-rate d-flex ms-auto">
+                  <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                  <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                  <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                  <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                  <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                </ul>
+                <p class="featured-product__item-description">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Sunt, consequuntur, numquam quisquam
+                  voluptas aliquid, excepturi beatae quas quo soluta at rem? Natus odio deleniti eveniet similique
+                  explicabo dolore fugit suscipit?
+                </p>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="featured-product__item-wrap col-xl-3 col-md-6">
+          <div class="featured-product__item ">
+            <a href="/" class="featured-product__item-link">
+              <img src="/images/home/feature-prod1.jpg" alt="feature-prod1" class="featured-product__item-img">
+              <!-- <img src="/images/home/feature-prod1.jpg" alt="feature-prod1" class="featured-product__item-img"> -->
+              <div class="featured-product__item-link--cart">Add to cart
+                <div class="featured-product__item-link--cart-detail">Add to cart</div>
+              </div>
+              <div class="featured-product__item-link--view">
+                <i class="fa-regular fa-eye"></i>
+                <div class="featured-product__item-link--view-detail">Quick View</div>
+              </div>
+              <div class="featured-product__item-link--wishlist">
+                <i class="fa-regular fa-heart"></i>
+                <div class="featured-product__item-link--wishlist-detail">Add to Wishlist</div>
+              </div>
+
+              <div class="featured-product__item-link--sale">
+                SALE
+              </div>
+            </a>
+
+            <div class="featured-product__item-detail">
+              <a href="#" class="featured-product__item-name">aenean sagittis</a>
+              <div class="featured-product__item-wrap--price">
+                <div class="d-flex">
+                  <p class="featured-product__item-sale">$90.00</p>
+                  <p class="featured-product__item-price">$75.00</p>
+                </div>
+                <ul class="featured-product__item-start-rate d-flex ms-auto">
+                  <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                  <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                  <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                  <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                  <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                </ul>
+                <p class="featured-product__item-description">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Sunt, consequuntur, numquam quisquam
+                  voluptas aliquid, excepturi beatae quas quo soluta at rem? Natus odio deleniti eveniet similique
+                  explicabo dolore fugit suscipit?
+                </p>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="featured-product__item-wrap col-xl-3 col-md-6">
+          <div class="featured-product__item ">
+            <a href="/" class="featured-product__item-link">
+              <img src="/images/home/feature-prod1.jpg" alt="feature-prod1" class="featured-product__item-img">
+              <!-- <img src="/images/home/feature-prod1.jpg" alt="feature-prod1" class="featured-product__item-img"> -->
+              <div class="featured-product__item-link--cart">Add to cart
+                <div class="featured-product__item-link--cart-detail">Add to cart</div>
+              </div>
+              <div class="featured-product__item-link--view">
+                <i class="fa-regular fa-eye"></i>
+                <div class="featured-product__item-link--view-detail">Quick View</div>
+              </div>
+              <div class="featured-product__item-link--wishlist">
+                <i class="fa-regular fa-heart"></i>
+                <div class="featured-product__item-link--wishlist-detail">Add to Wishlist</div>
+              </div>
+
+              <div class="featured-product__item-link--sale">
+                SALE
+              </div>
+            </a>
+
+            <div class="featured-product__item-detail">
+              <a href="#" class="featured-product__item-name">aenean sagittis</a>
+              <div class="featured-product__item-wrap--price">
+                <div class="d-flex">
+                  <p class="featured-product__item-sale">$90.00</p>
+                  <p class="featured-product__item-price">$75.00</p>
+                </div>
+                <ul class="featured-product__item-start-rate d-flex ms-auto">
+                  <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                  <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                  <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                  <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                  <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                </ul>
+                <p class="featured-product__item-description">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Sunt, consequuntur, numquam quisquam
+                  voluptas aliquid, excepturi beatae quas quo soluta at rem? Natus odio deleniti eveniet similique
+                  explicabo dolore fugit suscipit?
+                </p>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+
+      </div>
+
+      <div class="product-list__line"></div>
+
+      <div class="product-list__pagination">
+        <nav aria-label="...">
+          <ul class="d-flex justify-content-center">
+            <li class="product-list__pagination-item">
+              <a class="product-list__pagination-item-link" href="#">1</a>
+            </li>
+
+            <li class="product-list__pagination-item">
+              <a class="product-list__pagination-item-link" href="#">2</a>
+            </li>
+
+            <li class="product-list__pagination-item">
+              <a class="product-list__pagination-item-link" href="#">3</a>
+            </li>
+
+            <li class="product-list__pagination-item">
+              <a class="product-list__pagination-item-link" href="#">
+                <i class="fa-solid fa-chevron-right"></i>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </section>
   </div>
 </article>

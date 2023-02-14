@@ -265,6 +265,11 @@
     margin: 0 16px;
     &-link {
         position: relative;
+        display: block;
+
+        img {
+            transition: all 0.3s ease;
+        }
 
         %featuredProductHover {
             font-size: 10px;
@@ -278,6 +283,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            visibility: hidden;
             opacity: 0;
 
             &:hover {
@@ -361,16 +367,19 @@
         &:hover &--view {
             bottom: 0px;
             opacity: 1;
+            visibility: visible;
         }
 
         &:hover &--wishlist {
             bottom: 0px;
             opacity: 1;
+            visibility: visible;
         }
 
         &:hover &--cart {
             bottom: 0px;
             opacity: 1;
+            visibility: visible;
         }
 
         &--sale {
@@ -399,6 +408,14 @@
         font-size: 14px;
         color: #000;
         margin: 10px 0 12px 0;
+        display: block;
+
+        &:hover {
+            color: $primary-color;
+        }
+    }
+    .featured-product__item-wrap--price {
+        display: flex;
     }
 
     &-sale {
@@ -419,6 +436,10 @@
                 margin-left: 2px;
             }
         }
+    }
+
+    &-description {
+        display: none;
     }
 }
 
