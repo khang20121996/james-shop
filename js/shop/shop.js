@@ -15,6 +15,7 @@ function handleInputFieldPrice(minValue, maxValue) {
   }
 }
 
+//handle filtering by price with "range"
 function handleRangePriceSlider() {
   const rangeInput = document.querySelectorAll(
     ".shop .sidebar__filter-by-price--range-input input"
@@ -45,6 +46,7 @@ function handleRangePriceSlider() {
   });
 }
 
+// handle filter change option
 function handleSelectSorting() {
   const selectWrapElement = document.querySelector(
     ".shop .product-list .product-list__sort-select"
@@ -83,6 +85,7 @@ function handleSelectSorting() {
   });
 }
 
+//handle formatting changes of product list
 function handleManualGridChanges() {
   const gridElement = document.getElementById("shopIconGrid");
   const listElement = document.getElementById("shopIconList");

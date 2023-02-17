@@ -17,7 +17,7 @@ function handleBlurHeader() {
   });
 }
 
-// handle footer (lasted tweets circle slider)
+// handle footer (lasted tweets with circle slider)
 function handleCircleSlider() {
   let currentSlide = 0;
   let interval;
@@ -70,6 +70,7 @@ function handleClickGotoTop() {
   });
 }
 
+// create spinner when page load
 function handlePreloader() {
   setTimeout(() => {
     const preLoaderElement = document.getElementById("preLoader");

@@ -11,7 +11,8 @@ function handleAutoNavSlider() {
   }, 8000);
 }
 
-function hanldeFeatureProdSlick() {
+// create slick slider feature product with Slick library
+function handleFeatureProdSlick() {
   $(".featured-product .featured-product-list").slick({
     infinite: true,
     speed: 300,
@@ -48,6 +49,7 @@ function hanldeFeatureProdSlick() {
   });
 }
 
+// create slick slider brand logo with Slick library
 function hanldeBrandsSlick() {
   $(".brand-list").slick({
     infinite: true,
@@ -89,7 +91,7 @@ function hanldeBrandsSlick() {
 
 function main() {
   handleAutoNavSlider();
-  hanldeFeatureProdSlick();
+  handleFeatureProdSlick();
   hanldeBrandsSlick();
   console.log("Home loaded");
 }

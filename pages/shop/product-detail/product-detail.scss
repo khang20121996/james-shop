@@ -2,6 +2,7 @@
 @import "/scss/variables";
 @import "/scss/mixins";
 
+/* product detail style start*/
 .product-detail {
     font-family: $font-family;
 
@@ -19,14 +20,88 @@
     }
 
     &__img {
-        img {
+        position: relative;
+
+        &-main {
+            position: relative;
             width: 100%;
+            z-index: 10;
+            opacity: 1;
+            transition: all ease 0.2s;
+            cursor: zoom-in;
+        }
+
+        &-zoom {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            z-index: 1;
+            transition: all ease 0.2s;
+
+            @include medium-down {
+                display: none;
+            }
+        }
+
+        &-icon-show {
+            cursor: pointer;
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+            border: 1px solid $primary-color;
+            background-color: #efefef;
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            z-index: 15;
+
+            i {
+                color: $primary-color;
+                line-height: 40px;
+                font-size: 20px;
+            }
         }
     }
 
     &__slick {
+        margin: 32px 0;
         img {
             width: 100%;
+            cursor: pointer;
+        }
+
+        &-item {
+            margin: 0 4px;
+        }
+
+        .slick-list {
+            margin: 0 -4px;
+        }
+
+        .slick-arrow {
+            width: 42px;
+            height: 28px;
+            border: 1px solid $border-color;
+            text-align: center;
+            margin: auto;
+            text-indent: -9999px;
+        }
+
+        .slick-prev {
+            background: url(/images/home/chevron-left-solid.svg) no-repeat;
+            background-position: center;
+            background-size: 50%;
+            margin-right: 8px;
+        }
+
+        .slick-next {
+            background: url(/images/home/chevron-right-solid.svg) no-repeat;
+            background-position: center;
+            background-size: 50%;
+            margin-right: 0;
+            margin-left: 8px;
         }
     }
 
@@ -141,3 +216,173 @@
         border-bottom: 2px dashed $border-color;
     }
 }
+/* product detail style end*/
+
+// Style for modal and zomm image
+.product-modal {
+    display: none;
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0, 0, 0, 0.3); /* Black w/ opacity */
+
+    &__content {
+        margin: -48px auto;
+        display: block;
+        width: 40%;
+        background-color: $white-color;
+        padding: 12px;
+        position: relative;
+        border-radius: 4px;
+        -webkit-animation-name: zoom;
+        -webkit-animation-duration: 0.6s;
+        animation-name: zoom;
+        animation-duration: 0.6s;
+
+        @include medium-down {
+            width: 85%;
+            margin: -32px auto;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        &-icon {
+            cursor: pointer;
+            position: absolute;
+            top: -18px;
+            right: -18px;
+            width: 32px;
+            height: 32px;
+            background-color: #000;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            border: 3px solid #fff;
+            box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.3);
+
+            i {
+                color: #fff;
+                font-size: 16px;
+            }
+        }
+    }
+
+    @-webkit-keyframes zoom {
+        from {
+            -webkit-transform: scale(0);
+        }
+        to {
+            -webkit-transform: scale(1);
+        }
+    }
+
+    @keyframes zoom {
+        from {
+            transform: scale(0);
+        }
+        to {
+            transform: scale(1);
+        }
+    }
+}
+
+.img-zoom-lens {
+    position: absolute;
+    border: 1px solid #d4d4d4;
+    /*set the size of the lens:*/
+    width: 180px;
+    height: 180px;
+    z-index: 9;
+
+    @include medium-down {
+        display: none;
+    }
+}
+
+/* product tab style start*/
+.product-detail__tab {
+    button {
+        text-transform: uppercase;
+        font-size: 15px;
+        font-weight: 700;
+        color: $text-color;
+        background-color: #fff;
+        padding: 4px 15px;
+        border: 1px solid transparent;
+        transition: 0.2s all ease;
+        margin-right: 32px;
+
+        &:hover {
+            border: 1px solid #000;
+            color: #000;
+        }
+    }
+
+    .active {
+        border: 1px solid #000;
+        color: #000;
+    }
+
+    &-description {
+        color: $text-color;
+        font-size: 13px;
+        padding: 16px;
+        border: 1px solid $border-color;
+        margin: 12px 0;
+        display: block;
+
+        p {
+            margin-bottom: 8px;
+        }
+    }
+
+    &-reviews {
+        display: none;
+        border: 1px solid $border-color;
+        padding: 32px;
+        margin: 12px 0;
+
+        &-detail {
+            width: 60%;
+            margin: auto;
+            @include medium-down {
+                width: 100%;
+            }
+        }
+
+        &-item {
+            &--avatar {
+                width: 60px;
+                height: 60px;
+                margin-right: 24px;
+            }
+
+            &--date {
+                font-weight: 700;
+                font-size: 16px;
+                color: $text-color;
+                span {
+                    font-weight: 500;
+                    margin-left: 4px;
+                }
+            }
+
+            &--content {
+                font-size: 15px;
+                color: $text-color;
+            }
+        }
+
+        h2 {
+        }
+    }
+}
+/* product tab style end*/
