@@ -98,7 +98,7 @@ function main() {
 
 setTimeout(() => {
   const location = window.location.pathname;
-  console.log(location);
+  console.log(window.location);
   if (location === "/") {
     main();
   }
