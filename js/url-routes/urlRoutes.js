@@ -16,7 +16,7 @@ const urlRoutes = {
   },
 
   "/": {
-    template: "/pages/shop/index.html",
+    template: "./pages/home/index.html",
     title: "",
     description: "",
   },
