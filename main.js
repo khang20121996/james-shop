@@ -1,4 +1,4 @@
-import urlLocationHanler from "./js/url-routes/urlRoutes";
+import routeMain from "./js/url-routes/urlRoutes";
 
 // handle header blur when user scrolling
 function handleBlurHeader() {
@@ -90,6 +90,8 @@ function main() {
   handleCircleSlider();
   console.log("Main loaded");
 }
+
+routeMain();
 
 setTimeout(() => {
   main();

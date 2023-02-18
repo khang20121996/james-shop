@@ -7,77 +7,71 @@
 //   e.preventDefault();
 //   urlRoute();
 // });
+function routeMain() {
+  const urlRoutes = {
+    404: {
+      template: "/pages/404-page/index.html",
+      title: "",
+      description: "",
+    },
 
-const urlRoutes = {
-  404: {
-    template: "/pages/404-page/index.html",
-    title: "",
-    description: "",
-  },
+    "/": {
+      template: "./pages/home/index.html",
+      title: "",
+      description: "",
+    },
 
-  "/": {
-    template: "./pages/home/index.html",
-    title: "",
-    description: "",
-  },
+    "/about": {
+      template: "/pages/about-us/index.html",
+      title: "",
+      description: "",
+    },
 
-  "/about": {
-    template: "/pages/about-us/index.html",
-    title: "",
-    description: "",
-  },
+    "/shop": {
+      template: "/pages/shop/index.html",
+      title: "",
+      description: "",
+    },
 
-  "/shop": {
-    template: "/pages/shop/index.html",
-    title: "",
-    description: "",
-  },
+    "/shop/detail": {
+      template: "/pages/shop/product-detail/index.html",
+      title: "",
+      description: "",
+    },
 
-  "/shop/detail": {
-    template: "/pages/shop/product-detail/index.html",
-    title: "",
-    description: "",
-  },
+    "/blog": {
+      template: "/pages/blog/index.html",
+      title: "",
+      description: "",
+    },
+  };
 
-  "/blog": {
-    template: "/pages/blog/index.html",
-    title: "",
-    description: "",
-  },
-};
+  const urlRoute = (event) => {
+    event = event || window.event;
+    event.preventDefault();
+    window.history.pushState({}, "", event.target.href);
+    urlLocationHanler();
+  };
 
-const urlRoute = (event) => {
-  event = event || window.event;
-  event.preventDefault();
-  window.history.pushState({}, "", event.target.href);
-  urlLocationHanler();
-};
+  const urlLocationHanler = async () => {
+    let location = window.location.pathname;
+    if (location.length == 0) {
+      location = "/";
+    }
 
-const urlLocationHanler = async () => {
-  let location = window.location.pathname;
-  if (location.length == 0) {
-    location = "/";
-  }
-  try {
     const route = urlRoutes[location] || urlRoutes[404];
     const html = await fetch(route.template).then((response) =>
       response.text()
     );
     document.getElementById("root").innerHTML = html;
-  } catch (error) {
-    console.log(error);
-  }
 
-  const route = urlRoutes[location] || urlRoutes[404];
-  const html = await fetch(route.template).then((response) => response.text());
-  document.getElementById("root").innerHTML = html;
+    console.log("route-complete", location);
+  };
 
-  console.log("route-complete", location);
-};
+  window.onpopstate = urlLocationHanler;
+  window.route = urlRoute;
 
-window.onpopstate = urlLocationHanler;
-window.route = urlRoute;
+  urlLocationHanler();
+}
 
-urlLocationHanler();
-
-export default urlLocationHanler;
+export default routeMain;
