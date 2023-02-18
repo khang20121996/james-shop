@@ -63,7 +63,7 @@ const urlLocationHanler = async () => {
   const html = await fetch(route.template).then((response) => response.text());
 
   document.getElementById("root").innerHTML = html;
-  console.log("route-complete");
+  console.log("route-complete", location);
 };
 
 window.onpopstate = urlLocationHanler;
