@@ -58,11 +58,20 @@ const urlLocationHanler = async () => {
   if (location.length == 0) {
     location = "/";
   }
+  try {
+    const route = urlRoutes[location] || urlRoutes[404];
+    const html = await fetch(route.template).then((response) =>
+      response.text()
+    );
+    document.getElementById("root").innerHTML = html;
+  } catch (error) {
+    console.log(error);
+  }
 
   const route = urlRoutes[location] || urlRoutes[404];
   const html = await fetch(route.template).then((response) => response.text());
-
   document.getElementById("root").innerHTML = html;
+
   console.log("route-complete", location);
 };
 
