@@ -27,7 +27,7 @@ const urlRoutes = {
     description: "",
   },
 
-  "/shop": {
+  "/shop/": {
     template: "/pages/shop/index.html",
     title: "",
     description: "",
