@@ -82,6 +82,7 @@ function handlePreloader() {
 
 window.addEventListener("load", () => {
   handlePreloader();
+  routeMain();
 });
 
 function main() {
@@ -90,8 +91,6 @@ function main() {
   handleCircleSlider();
   console.log("Main loaded");
 }
-
-routeMain();
 
 setTimeout(() => {
   main();
