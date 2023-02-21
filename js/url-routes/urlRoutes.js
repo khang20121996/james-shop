@@ -1,11 +1,11 @@
-document.addEventListener("click", (e) => {
-  const { target } = e;
-  if (!target.matches("a")) {
-    return;
-  }
+// document.addEventListener("click", (e) => {
+//   const { target } = e;
+//   if (!target.matches("a")) {
+//     return;
+//   }
 
-  urlRoute();
-});
+//   urlRoute();
+// });
 
 const urlRoutes = {
   404: {
