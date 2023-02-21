@@ -1,5 +1,3 @@
-import routeMain from "./js/url-routes/urlRoutes";
-
 // handle header blur when user scrolling
 function handleBlurHeader() {
   const headerElement = document.querySelector("header");
@@ -82,7 +80,6 @@ function handlePreloader() {
 
 window.addEventListener("load", () => {
   handlePreloader();
-  routeMain();
 });
 
 function main() {
