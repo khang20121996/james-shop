@@ -4,7 +4,6 @@ document.addEventListener("click", (e) => {
     return;
   }
 
-  e.preventDefault();
   urlRoute();
 });
 
