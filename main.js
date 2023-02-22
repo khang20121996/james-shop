@@ -13,10 +13,8 @@ function handleBlurHeader() {
         document.documentElement.scrollTop > 200
       ) {
         headerElement.style.backgroundColor = "rgba(229, 229, 229, 0.5)";
-        console.log("blur header");
       } else {
         headerElement.style.backgroundColor = "rgba(229, 229, 229, 1)";
-        console.log("normal header");
       }
     }, 1000)
   );
@@ -28,6 +26,7 @@ function handleCircleSlider() {
   let interval;
   const sliderContainer = document.getElementById("footerSlider");
   const sliderList = sliderContainer.querySelectorAll(".footer-slide");
+
   function startSlider() {
     firstSlide();
     interval = setInterval(() => {
@@ -47,6 +46,7 @@ function handleCircleSlider() {
       }
     }
   }
+
   function stopSlider() {
     clearInterval(interval);
   }
@@ -56,7 +56,7 @@ function handleCircleSlider() {
 // hancle click go to top
 function handleClickGotoTop() {
   const goToTopElement = document.getElementById("goToTop");
-  if (!goToTopElement) return;
+  if (!goToTopElement || window.innerWidth <= 1024) return;
 
   window.addEventListener(
     "scroll",

@@ -37,6 +37,19 @@ ul {
       opacity: 1;
     }
   }
+
+  &:active {
+    .icon {
+      color: red;
+    }
+
+    .show {
+      visibility: visible;
+      transform: translateY(40px);
+      transition: all 0.3s ease;
+      opacity: 1;
+    }
+  }
 }
 
 %icon-hover {
@@ -500,11 +513,15 @@ ul {
     transition: all 0.8s ease;
     opacity: 0;
     transform: translateY(80px);
+    display: block;
     i {
       font-size: 18px;
     }
     &:hover {
       background-color: $primary-color;
+    }
+    @include medium-down {
+      display: none;
     }
   }
 
