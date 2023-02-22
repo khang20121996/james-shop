@@ -1,0 +1,128 @@
+@import "/scss/variables";
+@import "/scss/mixins";
+
+.cart {
+    font-family: $font-family;
+    h1 {
+        font-size: 36px;
+        font-weight: 600;
+        text-transform: uppercase;
+        text-align: center;
+        margin-bottom: 16px;
+    }
+
+    &__line {
+        width: 64px;
+        height: 1px;
+        background-color: $primary-color;
+        margin: auto;
+    }
+
+    &__title {
+        margin-top: 48px;
+        background-color: #f7f7f7;
+        @include medium-down {
+            display: none;
+        }
+
+        h6 {
+            text-transform: uppercase;
+            color: $text-color;
+            font-weight: 600;
+            text-align: center;
+            margin: 20px 0;
+        }
+    }
+
+    &__list-pc {
+        margin-bottom: 32px;
+        @include medium-down {
+            display: none !important;
+        }
+    }
+
+    &__item {
+        padding: 8px;
+        border-bottom: 1px solid $border-color;
+        p {
+            font-size: 16px;
+            color: #000;
+            font-weight: 600;
+            line-height: 90px;
+            margin: 0;
+            text-align: center;
+        }
+
+        &-img {
+            width: 90px;
+            height: 90px;
+            margin-right: 16px;
+            display: block;
+        }
+    }
+
+    &__list-mobile {
+        display: none;
+
+        @include medium-down {
+            display: block;
+            margin: 32px 0;
+        }
+    }
+
+    &__item-mobile {
+        padding: 8px 0;
+        border-bottom: 1px solid $border-color;
+
+        img {
+            width: 80px;
+            height: 80px;
+            margin-right: 8px;
+        }
+
+        p {
+            margin: 8px 0;
+        }
+
+        &-name {
+        }
+
+        &-quantity {
+            font-weight: 600;
+            padding-right: 16px;
+        }
+
+        &-price {
+        }
+
+        &-total {
+            font-weight: 600;
+            color: #000;
+        }
+    }
+
+    &__total {
+        h3 {
+            font-weight: 600;
+            color: $primary-color;
+            font-size: 16px;
+            margin: 0;
+        }
+
+        &-price {
+            margin-right: 80px;
+            margin-left: 32px;
+            color: #000;
+            font-weight: 600;
+        }
+    }
+
+    &__checkout {
+        margin: 32px 80px 64px 0;
+        text-align: end;
+        button {
+            @include button(1px);
+            font-weight: 600;
+        }
+    }
+}

@@ -1,18 +1,25 @@
+// use throttle technique to handle scroll . event
+import throttle from "lodash.throttle";
+
 // handle header blur when user scrolling
 function handleBlurHeader() {
   const headerElement = document.querySelector("header");
   if (!headerElement) return;
-
-  document.addEventListener("scroll", (event) => {
-    if (
-      document.body.scrollTop > 200 ||
-      document.documentElement.scrollTop > 200
-    ) {
-      headerElement.style.backgroundColor = "rgba(229, 229, 229, 0.5)";
-    } else {
-      headerElement.style.backgroundColor = "rgba(229, 229, 229, 1)";
-    }
-  });
+  window.addEventListener(
+    "scroll",
+    throttle(() => {
+      if (
+        document.body.scrollTop > 200 ||
+        document.documentElement.scrollTop > 200
+      ) {
+        headerElement.style.backgroundColor = "rgba(229, 229, 229, 0.5)";
+        console.log("blur header");
+      } else {
+        headerElement.style.backgroundColor = "rgba(229, 229, 229, 1)";
+        console.log("normal header");
+      }
+    }, 1000)
+  );
 }
 
 // handle footer (lasted tweets with circle slider)
@@ -51,16 +58,21 @@ function handleClickGotoTop() {
   const goToTopElement = document.getElementById("goToTop");
   if (!goToTopElement) return;
 
-  document.addEventListener("scroll", (event) => {
-    if (
-      document.body.scrollTop > 400 ||
-      document.documentElement.scrollTop > 400
-    ) {
-      goToTopElement.classList.add("active");
-    } else {
-      goToTopElement.classList.remove("active");
-    }
-  });
+  window.addEventListener(
+    "scroll",
+    throttle(() => {
+      if (
+        document.body.scrollTop > 400 ||
+        document.documentElement.scrollTop > 400
+      ) {
+        goToTopElement.classList.add("active");
+        console.log("go to top visible");
+      } else {
+        goToTopElement.classList.remove("active");
+        console.log("go to top hide");
+      }
+    }, 1000)
+  );
 
   goToTopElement.addEventListener("click", () => {
     document.body.scrollTop = 0;
@@ -75,7 +87,7 @@ function handlePreloader() {
     if (!preLoaderElement) return;
     preLoaderElement.style.display = "none";
     console.log("loader stop");
-  }, 2000);
+  }, 3000);
 }
 
 window.addEventListener("load", () => {

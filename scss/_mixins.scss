@@ -57,6 +57,7 @@ $large-width: 1024px;
     padding: 8px 32px;
     color: $text-color;
     transition: all 0.2s ease;
+    border: $border solid transparent;
 
     &:hover {
         background-color: $primary-color;

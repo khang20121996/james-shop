@@ -38,6 +38,12 @@ const urlRoutes = {
     description: "",
   },
 
+  "/shop/cart": {
+    template: "/pages/shop/shopping-cart/index.html",
+    title: "",
+    description: "",
+  },
+
   "/blog": {
     template: "/pages/blog/index.html",
     title: "",
