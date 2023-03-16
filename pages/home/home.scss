@@ -262,6 +262,7 @@
 }
 
 .featured-product__item {
+    position: relative;
     margin: 0 16px;
     &-link {
         position: relative;
@@ -269,6 +270,7 @@
 
         img {
             transition: all 0.3s ease;
+            background-color: #efefef;
         }
 
         %featuredProductHover {
@@ -432,13 +434,17 @@
         li {
             i {
                 font-size: 12px;
-                color: #ffb21e;
+                color: $bg-gray;
                 margin-left: 2px;
             }
         }
     }
 
     &-description {
+        display: none;
+    }
+
+    &-readmore {
         display: none;
     }
 }
@@ -594,6 +600,7 @@
             width: 108px;
             height: 108px;
             transition: all 0.6s ease;
+            background-color: #efefef;
 
             &:hover {
                 transform: scale(1.1);
@@ -616,9 +623,9 @@
 
         &-start {
             margin: 10px 0 6px 0;
-            li {
+            li i {
                 font-size: 10px;
-                color: #ffb21e;
+                color: $bg-gray;
             }
         }
 

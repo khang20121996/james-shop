@@ -33,9 +33,127 @@
 </head>
 
 <body>
+  <!-- template to render for product list  -->
+  <template id="templateFeatureProduct">
+    <div class="featured-product__item ">
+      <a href="" class="featured-product__item-link">
+        <img src="" alt="feature-prod1" class="featured-product__item-img">
+        <div class="featured-product__item-link--cart">Add to cart
+          <div class="featured-product__item-link--cart-detail">Add to cart</div>
+        </div>
+        <div class="featured-product__item-link--view">
+          <i class="fa-regular fa-eye"></i>
+          <div class="featured-product__item-link--view-detail">Quick View</div>
+        </div>
+        <div class="featured-product__item-link--wishlist">
+          <i class="fa-regular fa-heart"></i>
+          <div class="featured-product__item-link--wishlist-detail">Add to Wishlist</div>
+        </div>
+        <div class="featured-product__item-link--sale">
+          SALE
+        </div>
+      </a>
+
+      <a href="" class="featured-product__item-name"></a>
+
+      <div class="d-flex">
+        <p class="featured-product__item-sale"></p>
+        <p class="featured-product__item-price"></p>
+        <ul class="featured-product__item-start-rate d-flex ms-auto">
+          <li><i class="fa-sharp fa-solid fa-star"></i></li>
+          <li><i class="fa-sharp fa-solid fa-star"></i></li>
+          <li><i class="fa-sharp fa-solid fa-star"></i></li>
+          <li><i class="fa-sharp fa-solid fa-star"></i></li>
+          <li><i class="fa-sharp fa-solid fa-star"></i></li>
+        </ul>
+      </div>
+
+      <div class="toastsCartSuccess">
+        <p>Add to cart successfully</p>
+      </div>
+    </div>
+  </template>
+
+  <template id="templateShopFeatureProduct">
+    <div class="featured-product__item-wrap col-xl-3 col-md-6">
+      <div class="featured-product__item ">
+        <a href="shop/detail" class="featured-product__item-link">
+          <img src="/images/home/feature-prod1.jpg" alt="feature-prod1" class="featured-product__item-img">
+          <div class="featured-product__item-link--cart">Add to cart
+            <div class="featured-product__item-link--cart-detail">Add to cart</div>
+          </div>
+          <div class="featured-product__item-link--view">
+            <i class="fa-regular fa-eye"></i>
+            <div class="featured-product__item-link--view-detail">Quick View</div>
+          </div>
+          <div class="featured-product__item-link--wishlist">
+            <i class="fa-regular fa-heart"></i>
+            <div class="featured-product__item-link--wishlist-detail">Add to Wishlist</div>
+          </div>
+
+          <div class="featured-product__item-link--sale">
+            SALE
+          </div>
+        </a>
+
+        <div class="featured-product__item-detail">
+          <a href="#" class="featured-product__item-name">aenean sagittis</a>
+          <div class="featured-product__item-wrap--price">
+            <div class="d-flex">
+              <p class="featured-product__item-sale">$90.00</p>
+              <p class="featured-product__item-price">$75.00</p>
+            </div>
+            <ul class="featured-product__item-start-rate d-flex ms-auto">
+              <li><i class="fa-sharp fa-solid fa-star"></i></li>
+              <li><i class="fa-sharp fa-solid fa-star"></i></li>
+              <li><i class="fa-sharp fa-solid fa-star"></i></li>
+              <li><i class="fa-sharp fa-solid fa-star"></i></li>
+              <li><i class="fa-sharp fa-solid fa-star"></i></li>
+            </ul>
+            <p class="featured-product__item-description">
+
+            </p>
+            <a href="#" class="featured-product__item-readmore">[...read more]</a>
+
+          </div>
+        </div>
+
+        <div class="toastsCartSuccess">
+          <p>Add to cart successfully</p>
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <template id="templateProduct">
+    <div class="product-item d-flex product-item__border-bottom">
+      <a href="" class="product-item__img">
+        <img src="" alt="product">
+      </a>
+      <div class="product-item__info">
+        <a href="" class="product-item__info-name"></a>
+        <ul class="product-item__info-start d-flex">
+          <li><i class="fa-sharp fa-solid fa-star"></i></li>
+          <li><i class="fa-sharp fa-solid fa-star"></i></li>
+          <li><i class="fa-sharp fa-solid fa-star"></i></li>
+          <li><i class="fa-sharp fa-solid fa-star"></i></li>
+          <li><i class="fa-sharp fa-solid fa-star"></i></li>
+        </ul>
+        <div class="d-flex">
+          <div class="product-item__info-price"><span></span></div>
+          <div class="product-item__info-discount"><span></span></div>
+        </div>
+      </div>
+
+    </div>
+  </template>
+
+
   <div id="preLoader">
     <img src="./images/home/Spinner-1s-.gif" alt="">
   </div>
+
+
 
   <div id="root">
   </div>

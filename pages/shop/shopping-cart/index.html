@@ -32,13 +32,43 @@
 
             <div class="header-inner__icon-cart" onclick="">
                 <div class="header-inner__icon-cart--detail show">
-                    <p>You have no items in your shopping cart!</p>
+                    <p class="header-inner__icon-cart--detail-note">You have no items in your shopping cart!</p>
+                    <template id="cartItem">
+                        <li class="cart__item-mobile justify-content-between">
+                            <a href="shop/cart">
+                                <div class="d-flex">
+                                    <img src="" alt="" class="cart__item-mobile-img">
+                                    <div>
+                                        <p class="cart__item-mobile-name"></p>
+                                        <div class="d-flex">
+                                            <p class="cart__item-mobile-quantity">
+                                                x1
+                                            </p>
+                                            <p class="cart__item-mobile-price">
+
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <div>
+                                <p class="cart__item-mobile-total"></p>
+                                <button class="cart__item--delete"><i class="fa-solid fa-xmark"></i></button>
+                            </div>
+                        </li>
+                    </template>
+
+                    <ul class="cart__list-mobile">
+
+                    </ul>
                     <div class="d-flex justify-content-between py-4">
                         <h5>Subtotal:</h5>
-                        <h4>$0.00</h5>
+                        <h4 class="cart__item--subtotal">$0.00</h5>
                     </div>
                 </div>
                 <i class="fa-solid fa-bag-shopping icon"></i>
+                <p class="header-inner__icon-cart--quantity">0</p>
             </div>
 
             <div class="header-inner__icon-menu align-items-center" onclick="">

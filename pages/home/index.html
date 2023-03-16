@@ -1,6 +1,5 @@
 <header class="header container-fluid">
   <div class="header-inner container d-flex align-items-center">
-
     <a class="header-inner__logo" href="/"><img src="/images/home/logo.png" alt="logo" />
     </a>
 
@@ -25,20 +24,50 @@
         <div class="header-inner__icon-account--list show">
           <div><a href="#">My Account</a></div>
           <div><a href="#">Wishlist</a></div>
-          <div><a href="#">Shopping Cart</a></div>
+          <div><a href="/shop/cart">Shopping Cart</a></div>
           <div><a href="#">Checkout</a></div>
         </div>
       </div>
 
       <div class="header-inner__icon-cart" onclick="">
         <div class="header-inner__icon-cart--detail show">
-          <p>You have no items in your shopping cart!</p>
+          <p class="header-inner__icon-cart--detail-note">You have no items in your shopping cart!</p>
+          <template id="cartItem">
+            <li class="cart__item-mobile justify-content-between">
+              <a href="shop/cart">
+                <div class="d-flex">
+                  <img src="" alt="" class="cart__item-mobile-img">
+                  <div>
+                    <p class="cart__item-mobile-name"></p>
+                    <div class="d-flex">
+                      <p class="cart__item-mobile-quantity">
+                        x1
+                      </p>
+                      <p class="cart__item-mobile-price">
+
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </a>
+
+              <div>
+                <p class="cart__item-mobile-total"></p>
+                <button class="cart__item--delete"><i class="fa-solid fa-xmark"></i></button>
+              </div>
+            </li>
+          </template>
+
+          <ul class="cart__list-mobile">
+
+          </ul>
           <div class="d-flex justify-content-between py-4">
             <h5>Subtotal:</h5>
-            <h4>$0.00</h5>
+            <h4 class="cart__item--subtotal">$0.00</h5>
           </div>
         </div>
         <i class="fa-solid fa-bag-shopping icon"></i>
+        <p class="header-inner__icon-cart--quantity">0</p>
       </div>
 
       <div class="header-inner__icon-menu align-items-center" onclick="">
@@ -118,218 +147,7 @@
     <div class="row">
       <h3>feature products</h3>
     </div>
-
-    <div class="featured-product-list " id="">
-      <div class="featured-product__item ">
-        <a href="/" class="featured-product__item-link">
-          <img src="/images/home/feature-prod1.jpg" alt="feature-prod1" class="featured-product__item-img">
-          <!-- <img src="/images/home/feature-prod1.jpg" alt="feature-prod1" class="featured-product__item-img"> -->
-          <div class="featured-product__item-link--cart">Add to cart
-            <div class="featured-product__item-link--cart-detail">Add to cart</div>
-          </div>
-          <div class="featured-product__item-link--view">
-            <i class="fa-regular fa-eye"></i>
-            <div class="featured-product__item-link--view-detail">Quick View</div>
-          </div>
-          <div class="featured-product__item-link--wishlist">
-            <i class="fa-regular fa-heart"></i>
-            <div class="featured-product__item-link--wishlist-detail">Add to Wishlist</div>
-          </div>
-        </a>
-        <a href="#" class="featured-product__item-name">aenean sagittis</a>
-        <div class="d-flex">
-          <p class="featured-product__item-sale">$90.00</p>
-          <p class="featured-product__item-price">$75.00</p>
-          <ul class="featured-product__item-start-rate d-flex ms-auto">
-            <li><i class="fa-sharp fa-solid fa-star"></i></li>
-            <li><i class="fa-sharp fa-solid fa-star"></i></li>
-            <li><i class="fa-sharp fa-solid fa-star"></i></li>
-            <li><i class="fa-sharp fa-solid fa-star"></i></li>
-            <li><i class="fa-sharp fa-solid fa-star"></i></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="featured-product__item ">
-        <a href="/" class="featured-product__item-link">
-          <img src="/images/home/feature-prod1.jpg" alt="feature-prod1" class="featured-product__item-img">
-          <!-- <img src="/images/home/feature-prod1.jpg" alt="feature-prod1" class="featured-product__item-img"> -->
-          <div class="featured-product__item-link--cart">Add to cart
-            <div class="featured-product__item-link--cart-detail">Add to cart</div>
-          </div>
-          <div class="featured-product__item-link--view">
-            <i class="fa-regular fa-eye"></i>
-            <div class="featured-product__item-link--view-detail">Quick View</div>
-          </div>
-          <div class="featured-product__item-link--wishlist">
-            <i class="fa-regular fa-heart"></i>
-            <div class="featured-product__item-link--wishlist-detail">Add to Wishlist</div>
-          </div>
-        </a>
-        <a href="#" class="featured-product__item-name">aenean sagittis</a>
-        <div class="d-flex">
-          <p class="featured-product__item-sale">$90.00</p>
-          <p class="featured-product__item-price">$75.00</p>
-          <ul class="featured-product__item-start-rate d-flex ms-auto">
-            <li><i class="fa-sharp fa-solid fa-star"></i></li>
-            <li><i class="fa-sharp fa-solid fa-star"></i></li>
-            <li><i class="fa-sharp fa-solid fa-star"></i></li>
-            <li><i class="fa-sharp fa-solid fa-star"></i></li>
-            <li><i class="fa-sharp fa-solid fa-star"></i></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="featured-product__item ">
-        <a href="/" class="featured-product__item-link">
-          <img src="/images/home/feature-prod1.jpg" alt="feature-prod1" class="featured-product__item-img">
-          <!-- <img src="/images/home/feature-prod1.jpg" alt="feature-prod1" class="featured-product__item-img"> -->
-          <div class="featured-product__item-link--cart">Add to cart
-            <div class="featured-product__item-link--cart-detail">Add to cart</div>
-          </div>
-          <div class="featured-product__item-link--view">
-            <i class="fa-regular fa-eye"></i>
-            <div class="featured-product__item-link--view-detail">Quick View</div>
-          </div>
-          <div class="featured-product__item-link--wishlist">
-            <i class="fa-regular fa-heart"></i>
-            <div class="featured-product__item-link--wishlist-detail">Add to Wishlist</div>
-          </div>
-        </a>
-        <a href="#" class="featured-product__item-name">aenean sagittis</a>
-        <div class="d-flex">
-          <p class="featured-product__item-sale">$90.00</p>
-          <p class="featured-product__item-price">$75.00</p>
-          <ul class="featured-product__item-start-rate d-flex ms-auto">
-            <li><i class="fa-sharp fa-solid fa-star"></i></li>
-            <li><i class="fa-sharp fa-solid fa-star"></i></li>
-            <li><i class="fa-sharp fa-solid fa-star"></i></li>
-            <li><i class="fa-sharp fa-solid fa-star"></i></li>
-            <li><i class="fa-sharp fa-solid fa-star"></i></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="featured-product__item ">
-        <a href="/" class="featured-product__item-link">
-          <img src="/images/home/feature-prod1.jpg" alt="feature-prod1" class="featured-product__item-img">
-          <!-- <img src="/images/home/feature-prod1.jpg" alt="feature-prod1" class="featured-product__item-img"> -->
-          <div class="featured-product__item-link--cart">Add to cart
-            <div class="featured-product__item-link--cart-detail">Add to cart</div>
-          </div>
-          <div class="featured-product__item-link--view">
-            <i class="fa-regular fa-eye"></i>
-            <div class="featured-product__item-link--view-detail">Quick View</div>
-          </div>
-          <div class="featured-product__item-link--wishlist">
-            <i class="fa-regular fa-heart"></i>
-            <div class="featured-product__item-link--wishlist-detail">Add to Wishlist</div>
-          </div>
-        </a>
-        <a href="#" class="featured-product__item-name">aenean sagittis</a>
-        <div class="d-flex">
-          <p class="featured-product__item-sale">$90.00</p>
-          <p class="featured-product__item-price">$75.00</p>
-          <ul class="featured-product__item-start-rate d-flex ms-auto">
-            <li><i class="fa-sharp fa-solid fa-star"></i></li>
-            <li><i class="fa-sharp fa-solid fa-star"></i></li>
-            <li><i class="fa-sharp fa-solid fa-star"></i></li>
-            <li><i class="fa-sharp fa-solid fa-star"></i></li>
-            <li><i class="fa-sharp fa-solid fa-star"></i></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="featured-product__item ">
-        <a href="/" class="featured-product__item-link">
-          <img src="/images/home/feature-prod1.jpg" alt="feature-prod1" class="featured-product__item-img">
-          <!-- <img src="/images/home/feature-prod1.jpg" alt="feature-prod1" class="featured-product__item-img"> -->
-          <div class="featured-product__item-link--cart">Add to cart
-            <div class="featured-product__item-link--cart-detail">Add to cart</div>
-          </div>
-          <div class="featured-product__item-link--view">
-            <i class="fa-regular fa-eye"></i>
-            <div class="featured-product__item-link--view-detail">Quick View</div>
-          </div>
-          <div class="featured-product__item-link--wishlist">
-            <i class="fa-regular fa-heart"></i>
-            <div class="featured-product__item-link--wishlist-detail">Add to Wishlist</div>
-          </div>
-        </a>
-        <a href="#" class="featured-product__item-name">aenean sagittis</a>
-        <div class="d-flex">
-          <p class="featured-product__item-sale">$90.00</p>
-          <p class="featured-product__item-price">$75.00</p>
-          <ul class="featured-product__item-start-rate d-flex ms-auto">
-            <li><i class="fa-sharp fa-solid fa-star"></i></li>
-            <li><i class="fa-sharp fa-solid fa-star"></i></li>
-            <li><i class="fa-sharp fa-solid fa-star"></i></li>
-            <li><i class="fa-sharp fa-solid fa-star"></i></li>
-            <li><i class="fa-sharp fa-solid fa-star"></i></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="featured-product__item ">
-        <a href="/" class="featured-product__item-link">
-          <img src="/images/home/feature-prod1.jpg" alt="feature-prod1" class="featured-product__item-img">
-          <!-- <img src="/images/home/feature-prod1.jpg" alt="feature-prod1" class="featured-product__item-img"> -->
-          <div class="featured-product__item-link--cart">Add to cart
-            <div class="featured-product__item-link--cart-detail">Add to cart</div>
-          </div>
-          <div class="featured-product__item-link--view">
-            <i class="fa-regular fa-eye"></i>
-            <div class="featured-product__item-link--view-detail">Quick View</div>
-          </div>
-          <div class="featured-product__item-link--wishlist">
-            <i class="fa-regular fa-heart"></i>
-            <div class="featured-product__item-link--wishlist-detail">Add to Wishlist</div>
-          </div>
-        </a>
-        <a href="#" class="featured-product__item-name">aenean sagittis</a>
-        <div class="d-flex">
-          <p class="featured-product__item-sale">$90.00</p>
-          <p class="featured-product__item-price">$75.00</p>
-          <ul class="featured-product__item-start-rate d-flex ms-auto">
-            <li><i class="fa-sharp fa-solid fa-star"></i></li>
-            <li><i class="fa-sharp fa-solid fa-star"></i></li>
-            <li><i class="fa-sharp fa-solid fa-star"></i></li>
-            <li><i class="fa-sharp fa-solid fa-star"></i></li>
-            <li><i class="fa-sharp fa-solid fa-star"></i></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="featured-product__item ">
-        <a href="/" class="featured-product__item-link">
-          <img src="/images/home/feature-prod1.jpg" alt="feature-prod1" class="featured-product__item-img">
-          <!-- <img src="/images/home/feature-prod1.jpg" alt="feature-prod1" class="featured-product__item-img"> -->
-          <div class="featured-product__item-link--cart">Add to cart
-            <div class="featured-product__item-link--cart-detail">Add to cart</div>
-          </div>
-          <div class="featured-product__item-link--view">
-            <i class="fa-regular fa-eye"></i>
-            <div class="featured-product__item-link--view-detail">Quick View</div>
-          </div>
-          <div class="featured-product__item-link--wishlist">
-            <i class="fa-regular fa-heart"></i>
-            <div class="featured-product__item-link--wishlist-detail">Add to Wishlist</div>
-          </div>
-        </a>
-        <a href="#" class="featured-product__item-name">aenean sagittis</a>
-        <div class="d-flex">
-          <p class="featured-product__item-sale">$90.00</p>
-          <p class="featured-product__item-price">$75.00</p>
-          <ul class="featured-product__item-start-rate d-flex ms-auto">
-            <li><i class="fa-sharp fa-solid fa-star"></i></li>
-            <li><i class="fa-sharp fa-solid fa-star"></i></li>
-            <li><i class="fa-sharp fa-solid fa-star"></i></li>
-            <li><i class="fa-sharp fa-solid fa-star"></i></li>
-            <li><i class="fa-sharp fa-solid fa-star"></i></li>
-          </ul>
-        </div>
-      </div>
-
+    <div class="featured-product-list" id="">
     </div>
 
   </section>
@@ -390,193 +208,19 @@
     <div class="row">
       <div class="col-lg-4 col-12">
         <h1 class="products__title">new products</h1>
-
-        <div class="product-item d-flex product-item__border-bottom">
-          <a href="/" class="product-item__img">
-            <img src="/images/home/product-item.jpg" alt="product">
-          </a>
-          <div class="product-item__info">
-            <a href="/" class="product-item__info-name">TURPIS VELIT ALIQUET</a>
-            <ul class="product-item__info-start d-flex">
-              <li><i class="fa-sharp fa-solid fa-star"></i></li>
-              <li><i class="fa-sharp fa-solid fa-star"></i></li>
-              <li><i class="fa-sharp fa-solid fa-star"></i></li>
-              <li><i class="fa-sharp fa-solid fa-star"></i></li>
-              <li><i class="fa-sharp fa-solid fa-star"></i></li>
-            </ul>
-            <div class="d-flex">
-              <div class="product-item__info-price"><span>$</span><span>158.00</span></div>
-              <div class="product-item__info-discount"><span>$</span><span>138.00</span></div>
-            </div>
-          </div>
-        </div>
-
-        <div class="product-item d-flex product-item__border-bottom">
-          <a href="/" class="product-item__img">
-            <img src="/images/home/product-item.jpg" alt="product">
-          </a>
-          <div class="product-item__info">
-            <a href="/" class="product-item__info-name">TURPIS VELIT ALIQUET</a>
-            <ul class="product-item__info-start d-flex">
-              <li><i class="fa-sharp fa-solid fa-star"></i></li>
-              <li><i class="fa-sharp fa-solid fa-star"></i></li>
-              <li><i class="fa-sharp fa-solid fa-star"></i></li>
-              <li><i class="fa-sharp fa-solid fa-star"></i></li>
-              <li><i class="fa-sharp fa-solid fa-star"></i></li>
-            </ul>
-            <div class="d-flex">
-              <div class="product-item__info-price"><span>$</span><span>158.00</span></div>
-              <div class="product-item__info-discount"><span>$</span><span>138.00</span></div>
-            </div>
-          </div>
-        </div>
-
-        <div class="product-item d-flex">
-          <a href="/" class="product-item__img">
-            <img src="/images/home/product-item.jpg" alt="product">
-          </a>
-          <div class="product-item__info">
-            <a href="/" class="product-item__info-name">TURPIS VELIT ALIQUET</a>
-            <ul class="product-item__info-start d-flex">
-              <li><i class="fa-sharp fa-solid fa-star"></i></li>
-              <li><i class="fa-sharp fa-solid fa-star"></i></li>
-              <li><i class="fa-sharp fa-solid fa-star"></i></li>
-              <li><i class="fa-sharp fa-solid fa-star"></i></li>
-              <li><i class="fa-sharp fa-solid fa-star"></i></li>
-            </ul>
-            <div class="d-flex">
-              <div class="product-item__info-price"><span>$</span><span>158.00</span></div>
-              <div class="product-item__info-discount"><span>$</span><span>138.00</span></div>
-            </div>
-          </div>
+        <div class="new-product__list">
         </div>
       </div>
 
       <div class="col-lg-4 col-12">
         <h1 class="products__title">sale products</h1>
-
-        <div class="product-item d-flex product-item__border-bottom">
-          <a href="/" class="product-item__img">
-            <img src="/images/home/product-item.jpg" alt="product">
-          </a>
-          <div class="product-item__info">
-            <a href="/" class="product-item__info-name">TURPIS VELIT ALIQUET</a>
-            <ul class="product-item__info-start d-flex">
-              <li><i class="fa-sharp fa-solid fa-star"></i></li>
-              <li><i class="fa-sharp fa-solid fa-star"></i></li>
-              <li><i class="fa-sharp fa-solid fa-star"></i></li>
-              <li><i class="fa-sharp fa-solid fa-star"></i></li>
-              <li><i class="fa-sharp fa-solid fa-star"></i></li>
-            </ul>
-            <div class="d-flex">
-              <div class="product-item__info-price"><span>$</span><span>158.00</span></div>
-              <div class="product-item__info-discount"><span>$</span><span>138.00</span></div>
-            </div>
-          </div>
-        </div>
-
-        <div class="product-item d-flex product-item__border-bottom">
-          <a href="/" class="product-item__img">
-            <img src="/images/home/product-item.jpg" alt="product">
-          </a>
-          <div class="product-item__info">
-            <a href="/" class="product-item__info-name">TURPIS VELIT ALIQUET</a>
-            <ul class="product-item__info-start d-flex">
-              <li><i class="fa-sharp fa-solid fa-star"></i></li>
-              <li><i class="fa-sharp fa-solid fa-star"></i></li>
-              <li><i class="fa-sharp fa-solid fa-star"></i></li>
-              <li><i class="fa-sharp fa-solid fa-star"></i></li>
-              <li><i class="fa-sharp fa-solid fa-star"></i></li>
-            </ul>
-            <div class="d-flex">
-              <div class="product-item__info-price"><span>$</span><span>158.00</span></div>
-              <div class="product-item__info-discount"><span>$</span><span>138.00</span></div>
-            </div>
-          </div>
-        </div>
-
-        <div class="product-item d-flex">
-          <a href="/" class="product-item__img">
-            <img src="/images/home/product-item.jpg" alt="product">
-          </a>
-          <div class="product-item__info">
-            <a href="/" class="product-item__info-name">TURPIS VELIT ALIQUET</a>
-            <ul class="product-item__info-start d-flex">
-              <li><i class="fa-sharp fa-solid fa-star"></i></li>
-              <li><i class="fa-sharp fa-solid fa-star"></i></li>
-              <li><i class="fa-sharp fa-solid fa-star"></i></li>
-              <li><i class="fa-sharp fa-solid fa-star"></i></li>
-              <li><i class="fa-sharp fa-solid fa-star"></i></li>
-            </ul>
-            <div class="d-flex">
-              <div class="product-item__info-price"><span>$</span><span>158.00</span></div>
-              <div class="product-item__info-discount"><span>$</span><span>138.00</span></div>
-            </div>
-          </div>
+        <div class="sale-product__list">
         </div>
       </div>
 
       <div class="col-lg-4 col-12">
         <h1 class="products__title">best selling</h1>
-
-        <div class="product-item d-flex product-item__border-bottom">
-          <a href="/" class="product-item__img">
-            <img src="/images/home/product-item.jpg" alt="product">
-          </a>
-          <div class="product-item__info">
-            <a href="/" class="product-item__info-name">TURPIS VELIT ALIQUET</a>
-            <ul class="product-item__info-start d-flex">
-              <li><i class="fa-sharp fa-solid fa-star"></i></li>
-              <li><i class="fa-sharp fa-solid fa-star"></i></li>
-              <li><i class="fa-sharp fa-solid fa-star"></i></li>
-              <li><i class="fa-sharp fa-solid fa-star"></i></li>
-              <li><i class="fa-sharp fa-solid fa-star"></i></li>
-            </ul>
-            <div class="d-flex">
-              <div class="product-item__info-price"><span>$</span><span>158.00</span></div>
-              <div class="product-item__info-discount"><span>$</span><span>138.00</span></div>
-            </div>
-          </div>
-        </div>
-
-        <div class="product-item d-flex product-item__border-bottom">
-          <a href="/" class="product-item__img">
-            <img src="/images/home/product-item.jpg" alt="product">
-          </a>
-          <div class="product-item__info">
-            <a href="/" class="product-item__info-name">TURPIS VELIT ALIQUET</a>
-            <ul class="product-item__info-start d-flex">
-              <li><i class="fa-sharp fa-solid fa-star"></i></li>
-              <li><i class="fa-sharp fa-solid fa-star"></i></li>
-              <li><i class="fa-sharp fa-solid fa-star"></i></li>
-              <li><i class="fa-sharp fa-solid fa-star"></i></li>
-              <li><i class="fa-sharp fa-solid fa-star"></i></li>
-            </ul>
-            <div class="d-flex">
-              <div class="product-item__info-price"><span>$</span><span>158.00</span></div>
-              <div class="product-item__info-discount"><span>$</span><span>138.00</span></div>
-            </div>
-          </div>
-        </div>
-
-        <div class="product-item d-flex">
-          <a href="/" class="product-item__img">
-            <img src="/images/home/product-item.jpg" alt="product">
-          </a>
-          <div class="product-item__info">
-            <a href="/" class="product-item__info-name">TURPIS VELIT ALIQUET</a>
-            <ul class="product-item__info-start d-flex">
-              <li><i class="fa-sharp fa-solid fa-star"></i></li>
-              <li><i class="fa-sharp fa-solid fa-star"></i></li>
-              <li><i class="fa-sharp fa-solid fa-star"></i></li>
-              <li><i class="fa-sharp fa-solid fa-star"></i></li>
-              <li><i class="fa-sharp fa-solid fa-star"></i></li>
-            </ul>
-            <div class="d-flex">
-              <div class="product-item__info-price"><span>$</span><span>158.00</span></div>
-              <div class="product-item__info-discount"><span>$</span><span>138.00</span></div>
-            </div>
-          </div>
+        <div class="best-sell-product__list">
         </div>
       </div>
     </div>

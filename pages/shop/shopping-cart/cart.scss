@@ -59,20 +59,27 @@
             margin-right: 16px;
             display: block;
         }
+
+        &--delete {
+            background-color: transparent;
+            border: none;
+            margin-left: 16px;
+        }
     }
 
     &__list-mobile {
-        display: none;
-
-        @include medium-down {
-            display: block;
-            margin: 32px 0;
+        a {
+            color: $text-color;
+            &:hover {
+                color: $primary-color;
+            }
         }
     }
 
     &__item-mobile {
         padding: 8px 0;
         border-bottom: 1px solid $border-color;
+        display: flex;
 
         img {
             width: 80px;
@@ -124,5 +131,14 @@
             @include button(1px);
             font-weight: 600;
         }
+    }
+}
+
+.cart .cart__list-mobile {
+    display: none;
+
+    @include medium-down {
+        display: block;
+        margin: 32px 0;
     }
 }
