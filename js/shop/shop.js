@@ -548,7 +548,32 @@ async function renderFeatureShopProduct() {
   renderProduct(bestSellProductList, sidebarProductListElement);
 }
 
-function main() {
+// function main() {
+//   const params = getQueryParams();
+
+//   handleDisplayPagination(params.page);
+//   handleFilterProductByBrands(params.brand);
+//   handleSelectSorting(params.sort, params.order);
+//   handleRangePriceSlider();
+//   handleManualGridChanges();
+//   handlePagination();
+//   handleSortingFilter();
+//   handleFilterByPrice();
+//   renderFeatureShopProduct();
+//   console.log("Shop loaded");
+// }
+
+// (() => {
+//   setTimeout(() => {
+//     const location = window.location.pathname;
+//     if (location === "/shop") {
+//       main();
+//     }
+//   }, 3000);
+// })();
+
+main();
+(() => {
   const params = getQueryParams();
 
   handleDisplayPagination(params.page);
@@ -561,15 +586,4 @@ function main() {
   handleFilterByPrice();
   renderFeatureShopProduct();
   console.log("Shop loaded");
-}
-
-// (() => {
-//   setTimeout(() => {
-//     const location = window.location.pathname;
-//     if (location === "/shop") {
-//       main();
-//     }
-//   }, 3000);
-// })();
-
-main();
+})();
