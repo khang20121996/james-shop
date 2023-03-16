@@ -169,54 +169,58 @@ export async function initPostReviews(params) {
   const contentInput = form.querySelector("[name=content]");
   const nameInput = form.querySelector("[name=name]");
   const emailInput = form.querySelector("[name=email]");
-  const listReview = await productApi.getCommentById(params);
-  const lengthReviewList = listReview.length;
-  renderReviewList(listReview);
-  renderReviewQuantity(lengthReviewList);
+  try {
+    const listReview = await productApi.getCommentById(params);
+    const lengthReviewList = listReview.length;
+    renderReviewList(listReview);
+    renderReviewQuantity(lengthReviewList);
 
-  if (!form) return;
-  handleSelectRatingForm();
+    if (!form) return;
+    handleSelectRatingForm();
 
-  let submitting = false;
-  let submit = false;
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault();
-    if (submitting) return;
+    let submitting = false;
+    let submit = false;
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      if (submitting) return;
 
-    submitting = true;
-    submit = true;
-    const reviewValues = getReviewValues(form);
-    const valid = await validateReview(form, reviewValues);
+      submitting = true;
+      submit = true;
+      const reviewValues = getReviewValues(form);
+      const valid = await validateReview(form, reviewValues);
 
-    if (valid) {
-      handlePostSubmitReview(params, reviewValues);
-      // reset value in form when valid
-      ["content", "name", "email"].forEach(
-        (name) => (form.querySelector(`[name="${name}"]`).value = "")
-      );
-    }
+      if (valid) {
+        handlePostSubmitReview(params, reviewValues);
+        // reset value in form when valid
+        ["content", "name", "email"].forEach(
+          (name) => (form.querySelector(`[name="${name}"]`).value = "")
+        );
+      }
 
-    submitting = false;
-  });
+      submitting = false;
+    });
 
-  emailInput.addEventListener("input", (e) => {
-    if (submit) {
-      const values = getReviewValues(form);
-      validateReview(form, { ...values, email: e.target.value });
-    }
-  });
+    emailInput.addEventListener("input", (e) => {
+      if (submit) {
+        const values = getReviewValues(form);
+        validateReview(form, { ...values, email: e.target.value });
+      }
+    });
 
-  nameInput.addEventListener("input", (e) => {
-    if (submit) {
-      const values = getReviewValues(form);
-      validateReview(form, { ...values, name: e.target.value });
-    }
-  });
+    nameInput.addEventListener("input", (e) => {
+      if (submit) {
+        const values = getReviewValues(form);
+        validateReview(form, { ...values, name: e.target.value });
+      }
+    });
 
-  contentInput.addEventListener("input", (e) => {
-    if (submit) {
-      const values = getReviewValues(form);
-      validateReview(form, { ...values, content: e.target.value });
-    }
-  });
+    contentInput.addEventListener("input", (e) => {
+      if (submit) {
+        const values = getReviewValues(form);
+        validateReview(form, { ...values, content: e.target.value });
+      }
+    });
+  } catch (error) {
+    console.log("Can't fetch reviews data");
+  }
 }
