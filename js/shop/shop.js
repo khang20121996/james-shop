@@ -572,7 +572,6 @@ async function renderFeatureShopProduct() {
 //   }, 3000);
 // })();
 
-main();
 (() => {
   const params = getQueryParams();
 
