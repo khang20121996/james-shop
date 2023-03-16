@@ -75,3 +75,4 @@ window.onpopstate = urlLocationHanler;
 window.route = urlRoute;
 
 urlLocationHanler();
+// location.reload();

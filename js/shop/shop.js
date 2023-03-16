@@ -548,43 +548,34 @@ async function renderFeatureShopProduct() {
   renderProduct(bestSellProductList, sidebarProductListElement);
 }
 
-// function main() {
-//   const params = getQueryParams();
+function main() {
+  const params = getQueryParams();
 
-//   handleDisplayPagination(params.page);
-//   handleFilterProductByBrands(params.brand);
-//   handleSelectSorting(params.sort, params.order);
-//   handleRangePriceSlider();
-//   handleManualGridChanges();
-//   handlePagination();
-//   handleSortingFilter();
-//   handleFilterByPrice();
-//   renderFeatureShopProduct();
-//   console.log("Shop loaded");
-// }
+  handleDisplayPagination(params.page);
+  handleFilterProductByBrands(params.brand);
+  handleSelectSorting(params.sort, params.order);
+  handleRangePriceSlider();
+  handleManualGridChanges();
+  handlePagination();
+  handleSortingFilter();
+  handleFilterByPrice();
+  renderFeatureShopProduct();
+  console.log("Shop loaded");
+}
 
-// (() => {
-//   setTimeout(() => {
-//     const location = window.location.pathname;
-//     if (location === "/shop") {
-//       main();
-//     }
-//   }, 3000);
-// })();
+(() => {
+  setTimeout(() => {
+    const location = window.location.pathname;
+    if (location === "/shop") {
+      main();
+    }
+  }, 3000);
+})();
 
-setTimeout(() => {
-  (() => {
-    const params = getQueryParams();
-
-    handleDisplayPagination(params.page);
-    handleFilterProductByBrands(params.brand);
-    handleSelectSorting(params.sort, params.order);
-    handleRangePriceSlider();
-    handleManualGridChanges();
-    handlePagination();
-    handleSortingFilter();
-    handleFilterByPrice();
-    renderFeatureShopProduct();
-    console.log("Shop loaded");
-  })();
-}, 3000);
+(function () {
+  window.onpageshow = function (event) {
+    if (event.persisted) {
+      window.location.reload();
+    }
+  };
+})();
