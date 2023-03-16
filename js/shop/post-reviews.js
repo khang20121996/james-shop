@@ -132,7 +132,6 @@ function renderReviewList(listReview) {
 
   if (ulElement) {
     listReview.forEach((review) => {
-      createReviewItem(review);
       const li = createReviewItem(review);
       ulElement.appendChild(li);
     });
