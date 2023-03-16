@@ -563,11 +563,13 @@ function main() {
   console.log("Shop loaded");
 }
 
-(() => {
-  setTimeout(() => {
-    const location = window.location.pathname;
-    if (location === "/shop") {
-      main();
-    }
-  }, 3000);
-})();
+// (() => {
+//   setTimeout(() => {
+//     const location = window.location.pathname;
+//     if (location === "/shop") {
+//       main();
+//     }
+//   }, 3000);
+// })();
+
+main();
