@@ -107,11 +107,11 @@ function createReviewItem(review) {
       ".product-detail__tab-reviews-item--content",
       review.content
     );
-    setTextContent(
-      liElement,
-      ".product-detail__tab-reviews-item--date",
-      dayjs(Number(review.date)).format("MMM D, YYYY h:mm A")
-    );
+    // setTextContent(
+    //   liElement,
+    //   ".product-detail__tab-reviews-item--date",
+    //   dayjs(Number(review.date)).format("MMM D, YYYY h:mm A")
+    // );
 
     return liElement;
   }
