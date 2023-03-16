@@ -155,7 +155,7 @@ async function handlePostSubmitReview(params, reviewValues) {
     // Post new comment to data base
     const payload = handleFullFieldReview(params, reviewValues);
     const data = JSON.stringify(payload);
-    const newRiview = await productApi.postReview(data);
+    await productApi.postReview(data);
 
     // render new comment to DOM
     renderReviewList([reviewValues]);
@@ -174,7 +174,7 @@ export async function initPostReviews(params) {
     const listReview = await productApi.getCommentById(params);
     console.log(listReview);
     // const lengthReviewList = listReview.length;
-    // renderReviewList(listReview);
+    renderReviewList(listReview);
     // renderReviewQuantity(lengthReviewList);
 
     if (!form) return;
