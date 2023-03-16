@@ -222,6 +222,6 @@ export async function initPostReviews(params) {
       }
     });
   } catch (error) {
-    console.log("Can't fetch reviews data");
+    console.log("Can't fetch reviews data", error);
   }
 }
