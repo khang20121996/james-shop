@@ -53,7 +53,7 @@ const urlRoutes = {
 
 const urlRoute = (event) => {
   event = event || window.event;
-  event.preventDefault();
+  // event.preventDefault();
   window.history.pushState({}, "", event.target.href);
   urlLocationHanler();
 };
