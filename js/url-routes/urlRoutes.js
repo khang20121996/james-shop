@@ -74,5 +74,11 @@ const urlLocationHanler = async () => {
 window.onpopstate = urlLocationHanler;
 window.route = urlRoute;
 
+(function () {
+  window.onpageshow = function (event) {
+    if (event.persisted) {
+      window.location.reload();
+    }
+  };
+})();
 urlLocationHanler();
-// location.reload();

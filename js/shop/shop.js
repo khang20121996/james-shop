@@ -571,11 +571,3 @@ function main() {
     }
   }, 3000);
 })();
-
-(function () {
-  window.onpageshow = function (event) {
-    if (event.persisted) {
-      window.location.reload();
-    }
-  };
-})();
