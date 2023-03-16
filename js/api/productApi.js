@@ -12,7 +12,7 @@ export const productApi = {
   },
 
   getCommentById(id) {
-    const url = `products/comments/${id}`;
+    const url = `products/1/comments`;
     return axiosClient.get(url);
   },
 
