@@ -572,17 +572,19 @@ async function renderFeatureShopProduct() {
 //   }, 3000);
 // })();
 
-(() => {
-  const params = getQueryParams();
+setTimeout(() => {
+  (() => {
+    const params = getQueryParams();
 
-  handleDisplayPagination(params.page);
-  handleFilterProductByBrands(params.brand);
-  handleSelectSorting(params.sort, params.order);
-  handleRangePriceSlider();
-  handleManualGridChanges();
-  handlePagination();
-  handleSortingFilter();
-  handleFilterByPrice();
-  renderFeatureShopProduct();
-  console.log("Shop loaded");
-})();
+    handleDisplayPagination(params.page);
+    handleFilterProductByBrands(params.brand);
+    handleSelectSorting(params.sort, params.order);
+    handleRangePriceSlider();
+    handleManualGridChanges();
+    handlePagination();
+    handleSortingFilter();
+    handleFilterByPrice();
+    renderFeatureShopProduct();
+    console.log("Shop loaded");
+  })();
+}, 3000);
