@@ -169,6 +169,7 @@ export async function initPostReviews(params) {
   const contentInput = form.querySelector("[name=content]");
   const nameInput = form.querySelector("[name=name]");
   const emailInput = form.querySelector("[name=email]");
+  console.log(params);
   try {
     const listReview = await productApi.getCommentById(params);
     const lengthReviewList = listReview.length;
