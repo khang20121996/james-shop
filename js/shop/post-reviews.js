@@ -1,5 +1,6 @@
 import * as yup from "yup";
-import * as dayjs from "dayjs";
+import dayjs from "dayjs";
+import "dayjs/locale/es";
 import { productApi } from "../api/productApi";
 import { setRating, setTextContent } from "../utils/common";
 
@@ -107,11 +108,11 @@ function createReviewItem(review) {
       ".product-detail__tab-reviews-item--content",
       review.content
     );
-    // setTextContent(
-    //   liElement,
-    //   ".product-detail__tab-reviews-item--date",
-    //   dayjs(Number(review.date)).format("MMM D, YYYY h:mm A")
-    // );
+    setTextContent(
+      liElement,
+      ".product-detail__tab-reviews-item--date",
+      dayjs(Number(review.date)).format("MMM D, YYYY h:mm A")
+    );
 
     return liElement;
   }
@@ -172,9 +173,9 @@ export async function initPostReviews(params) {
   try {
     const listReview = await productApi.getCommentById(params);
     console.log(listReview);
-    // const lengthReviewList = listReview.length;
+    const lengthReviewList = listReview.length;
     renderReviewList(listReview);
-    // renderReviewQuantity(lengthReviewList);
+    renderReviewQuantity(lengthReviewList);
 
     if (!form) return;
     handleSelectRatingForm();
