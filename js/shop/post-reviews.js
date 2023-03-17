@@ -166,18 +166,17 @@ async function handlePostSubmitReview(params, reviewValues) {
 
 export async function initPostReviews(params) {
   const form = document.querySelector(".product-detail__tab-reviews-form");
+  if (!form) return;
+
   const contentInput = form.querySelector("[name=content]");
   const nameInput = form.querySelector("[name=name]");
   const emailInput = form.querySelector("[name=email]");
-  console.log(params);
+
   try {
     const listReview = await productApi.getCommentById(params);
-    console.log(listReview);
     const lengthReviewList = listReview.length;
     renderReviewList(listReview);
     renderReviewQuantity(lengthReviewList);
-
-    if (!form) return;
     handleSelectRatingForm();
 
     let submitting = false;
@@ -193,7 +192,15 @@ export async function initPostReviews(params) {
 
       if (valid) {
         handlePostSubmitReview(params, reviewValues);
+
         // reset value in form when valid
+        const starList = document.querySelectorAll(
+          ".product-detail__tab-reviews-form li i"
+        );
+        starList.forEach((item) => {
+          item.classList.remove("fa-solid");
+          item.classList.add("fa-regular");
+        });
         ["content", "name", "email"].forEach(
           (name) => (form.querySelector(`[name="${name}"]`).value = "")
         );

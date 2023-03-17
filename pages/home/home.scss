@@ -181,7 +181,9 @@
 
         &:hover {
             &::after {
-                opacity: 0.6;
+                @include medium-up {
+                    opacity: 0.6;
+                }
             }
         }
     }
@@ -190,7 +192,9 @@
         transition: all 0.6s ease;
         opacity: 1;
         &:hover {
-            transform: scale(1.05);
+            @include medium-up {
+                transform: scale(1.05);
+            }
         }
     }
 
@@ -288,6 +292,12 @@
             visibility: hidden;
             opacity: 0;
 
+            @include medium-down {
+                bottom: 0px;
+                opacity: 1;
+                visibility: visible;
+            }
+
             &:hover {
                 background-color: $primary-color;
                 transition: all 0.6s ease;
@@ -333,7 +343,9 @@
             }
 
             &:hover &-detail {
-                display: flex;
+                @include medium-up {
+                    display: flex;
+                }
             }
         }
 
