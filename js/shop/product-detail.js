@@ -51,6 +51,8 @@ function handleImgProductDisplay() {
 // handle enlarging the main image of the product with modal
 function handleProductModal() {
   const buttonZoomIn = document.querySelector(".product-detail__img-icon-show");
+  if (!buttonZoomIn) return;
+
   const modalElement = document.getElementById("productModal");
   const imageModalElement = document.querySelector(
     ".product-modal__content img"
@@ -58,11 +60,9 @@ function handleProductModal() {
   const closeButton = document.querySelector(".product-modal__content-icon");
   const mainImageElement = document.querySelector(".product-detail__img img");
 
-  if (!buttonZoomIn) return;
-
   buttonZoomIn.addEventListener("click", () => {
-    modalElement.style.display = "block";
     imageModalElement.src = mainImageElement.src;
+    modalElement.style.display = "block";
   });
 
   if (closeButton) {
