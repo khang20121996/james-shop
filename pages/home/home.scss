@@ -378,22 +378,24 @@
             }
         }
 
-        &:hover &--view {
-            bottom: 0px;
-            opacity: 1;
-            visibility: visible;
-        }
+        @include medium-up {
+            &:hover &--view {
+                bottom: 0px;
+                opacity: 1;
+                visibility: visible;
+            }
 
-        &:hover &--wishlist {
-            bottom: 0px;
-            opacity: 1;
-            visibility: visible;
-        }
+            &:hover &--wishlist {
+                bottom: 0px;
+                opacity: 1;
+                visibility: visible;
+            }
 
-        &:hover &--cart {
-            bottom: 0px;
-            opacity: 1;
-            visibility: visible;
+            &:hover &--cart {
+                bottom: 0px;
+                opacity: 1;
+                visibility: visible;
+            }
         }
 
         &--sale {
