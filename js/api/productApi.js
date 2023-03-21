@@ -25,4 +25,9 @@ export const productApi = {
     const url = "comments";
     return axiosClient.post(url, data);
   },
+
+  searchProduct(data) {
+    const url = `products?q=${data}`;
+    return axiosClient.get(url);
+  },
 };

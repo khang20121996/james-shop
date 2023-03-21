@@ -339,9 +339,23 @@ function handleAddToCartButton(product) {
   const addToCartButton = document.querySelector(
     ".product-detail__form button"
   );
+  const newProduct = { ...product };
   if (addToCartButton) {
+    const notificationCartElement = document.querySelector(
+      ".product-detail__note"
+    );
+    const quantityCartElement = document.querySelector(
+      ".product-detail__form input"
+    );
+
     addToCartButton.addEventListener("click", () => {
-      handleAddToCart(product);
+      newProduct.quantityCart = quantityCartElement.value;
+      handleAddToCart(newProduct);
+
+      notificationCartElement.style.display = "block";
+      setTimeout(() => {
+        notificationCartElement.style.display = "none";
+      }, 2000);
     });
   }
 }

@@ -44,6 +44,12 @@ const urlRoutes = {
     description: "",
   },
 
+  "/shop/search": {
+    template: "/pages/shop/search-product/index.html",
+    title: "",
+    description: "",
+  },
+
   "/blog": {
     template: "/pages/blog/index.html",
     title: "",
@@ -67,18 +73,18 @@ const urlLocationHanler = async () => {
   const route = urlRoutes[location] || urlRoutes[404];
   const html = await fetch(route.template).then((response) => response.text());
   document.getElementById("root").innerHTML = html;
-
-  console.log("route-complete", location);
 };
 
 window.onpopstate = urlLocationHanler;
 window.route = urlRoute;
 
-(function () {
+(() => {
   window.onpageshow = function (event) {
     if (event.persisted) {
       window.location.reload();
     }
   };
+
+  urlLocationHanler();
+  console.log("router loaded");
 })();
-urlLocationHanler();

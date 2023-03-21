@@ -13,6 +13,7 @@ export default defineConfig({
         detail: resolve(__dirname, "pages/shop/product-detail/index.html"),
         cart: resolve(__dirname, "pages/shop/shopping-cart/index.html"),
         blog: resolve(__dirname, "pages/blog/index.html"),
+        search: resolve(__dirname, "pages/shop/search-product/index.html"),
       },
     },
   },

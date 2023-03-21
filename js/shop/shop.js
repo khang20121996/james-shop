@@ -564,10 +564,11 @@ function main() {
 }
 
 (() => {
-  setTimeout(() => {
-    const location = window.location.pathname;
-    if (location === "/shop") {
+  const location = window.location.pathname;
+
+  if (location === "/shop") {
+    setTimeout(() => {
       main();
-    }
-  }, 3000);
+    }, 3000);
+  }
 })();

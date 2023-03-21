@@ -12,7 +12,7 @@
         </nav>
 
         <div class="d-flex ms-auto header-inner__icon align-items-center">
-            <div class="header-inner__icon-search" onclick="">
+            <!-- <div class="header-inner__icon-search" onclick="">
                 <i class="fa-solid fa-magnifying-glass icon"></i>
                 <form class="header-inner__icon-search--input d-flex align-items-center show">
                     <input type="text" placeholder="Search product..." />
@@ -20,7 +20,7 @@
                         <i class="fa-solid fa-magnifying-glass ms-auto"></i>
                     </button>
                 </form>
-            </div>
+            </div> -->
 
             <div class="header-inner__icon-account" onclick="">
                 <i class="fa-solid fa-bars icon"></i>
@@ -37,7 +37,7 @@
                     <p class="header-inner__icon-cart--detail-note">You have no items in your shopping cart!</p>
                     <template id="cartItem">
                         <li class="cart__item-mobile justify-content-between">
-                            <a href="../shop/cart">
+                            <a href="/shop/cart">
                                 <div class="d-flex">
                                     <img src="" alt="" class="cart__item-mobile-img">
                                     <div>
@@ -86,198 +86,38 @@
     </div>
 </header>
 
-<article class="container product-detail">
-    <div class="row product-detail__path">
-        <div class="">
-            <a href="/">Home</a>
-            <span> > </span>
-            <a href="/shop">Shop</a>
-            <span> > </span>
-            <a href="/">Health & beauty</a>
-            <span> > </span>
-            <span class="product-detail__path-name"></span>
-        </div>
-    </div>
-
-    <div class="product-detail__line"></div>
-
+<article class="container shop">
     <div class="row">
-        <div class="col-lg-5 col-12">
-            <div class="product-detail__img">
-                <img src="" alt="" class="product-detail__img-main">
-                <div class="product-detail__img-zoom"></div>
+        <aside class="col-lg-3 col-12 sidebar">
+            <div class="sidebar__path">
+                <a href="/">Home</a>
+                <span> > </span>
+                <span>Shop</span>
+                <span> > </span>
+                <span>Search</span>
+            </div>
+        </aside>
 
-                <div class="product-detail__img-icon-show">
-                    <i class="fa-solid fa-expand"></i>
-                </div>
+        <section class="col-lg-9 col-12 product-list">
+            <div class="product-list__line"></div>
+
+            <form class="search-form">
+                <input type="text" placeholder="Search product...">
+                <button type="submit">
+                    <i class="fa-solid fa-magnifying-glass ms-auto"></i>
+                </button>
+            </form>
+            <p class="search-notification">No products found for "<span class="search-keyword"></span>"</p>
+
+            <!-- Reuse product item from feature product in home page -->
+            <div class="featured-product-list row" id="">
             </div>
 
-            <template id="templateProductImgSlick">
-                <div class="product-detail__slick-item">
-                    <img src="" alt="" class="product-detail__slick-img">
-                </div>
-            </template>
-
-            <div class="product-detail__slick">
-            </div>
-        </div>
-
-        <div class="col-lg-7 col-12">
-            <h5 class="product-detail__name"></h5>
-            <div class="d-flex">
-                <div>
-                    <span class="product-detail__price"></span>
-                    <span class="product-detail__discount"></span>
-                </div>
-                <ul class="product-detail__start-rate d-flex ms-auto">
-                    <li><i class="fa-sharp fa-solid fa-star"></i></li>
-                    <li><i class="fa-sharp fa-solid fa-star"></i></li>
-                    <li><i class="fa-sharp fa-solid fa-star"></i></li>
-                    <li><i class="fa-sharp fa-solid fa-star"></i></li>
-                    <li><i class="fa-sharp fa-solid fa-star"></i></li>
-                </ul>
-            </div>
-            <div class="product-detail__line--dashed"></div>
-            <p class="product-detail__description"></p>
-            <p class="product-detail__note">Add to cart successfully!</p>
-            <div class="product-detail__form">
-                <input type="number" placeholder="1" min="1" value="1">
-                <button>add to cart</button>
-                <p>Size: <span class="product-detail__form-size"></span></p>
-                <div class="product-detail__form-size-list d-flex flex-wrap">
-                    <div class="product-detail__form-size-item">37</div>
-                    <div class="product-detail__form-size-item">38</div>
-                    <div class="product-detail__form-size-item">39</div>
-                    <div class="product-detail__form-size-item">40</div>
-                    <div class="product-detail__form-size-item">41</div>
-                    <div class="product-detail__form-size-item">42</div>
-                    <div class="product-detail__form-size-item">43</div>
-                    <div class="product-detail__form-size-item">44</div>
-                </div>
-            </div>
-            <div>
-                <button class="product-detail__browse-list">Browse Wishlist</button>
-            </div>
-            <p class="product-detail__category">CATEGORY: <a href="#">Health & beauty</a></p>
-            <div class="product-detail__line"></div>
-        </div>
+            <div class="product-list__line"></div>
+        </section>
     </div>
-
-    <div class="product-detail__line"></div>
-
-    <div class="row product-detail__tab">
-        <div class="col-12">
-            <button class="product-detail__tab-description--button active">desctiption</button>
-            <button class="product-detail__tab-reviews--button">reviews <span
-                    class="product-detail__tab-reviews--quantity"></span> </button>
-
-            <div class="product-detail__tab-description">
-                <p class="product-detail__tab-description--code">
-
-                </p>
-                <p class="product-detail__tab-description--text">
-
-                </p>
-            </div>
-
-            <div class="product-detail__tab-reviews">
-                <div class="product-detail__tab-reviews-detail">
-                    <template id="reviewTemplate">
-                        <li class="d-flex product-detail__tab-reviews-item">
-                            <img class="product-detail__tab-reviews-item--avatar"
-                                src="https://demo.roadthemes.com/james/wp-content/uploads/2016/01/admin_avatar_1453715255-60x60.png"
-                                alt="avatar">
-                            <div class="w-100">
-                                <div class="d-flex justify-content-between">
-                                    <div>
-                                        <p class="product-detail__tab-reviews-item--name"></p>
-                                        <p class="product-detail__tab-reviews-item--date"></p>
-                                    </div>
-
-                                    <ul class="product-detail__start-rate d-flex">
-                                        <li><i class="fa-sharp fa-solid fa-star"></i></li>
-                                        <li><i class="fa-sharp fa-solid fa-star"></i></li>
-                                        <li><i class="fa-sharp fa-solid fa-star"></i></li>
-                                        <li><i class="fa-sharp fa-solid fa-star"></i></li>
-                                        <li><i class="fa-sharp fa-solid fa-star"></i></li>
-                                    </ul>
-                                </div>
-                                <p class="product-detail__tab-reviews-item--content"></p>
-                            </div>
-                        </li>
-                    </template>
-                    <ul class="product-detail__tab-reviews-detail--list">
-
-                    </ul>
-
-                    <h2>add a review</h2>
-
-                    <form action="" class="product-detail__tab-reviews-form" novalidate>
-                        <div>
-                            <label>Your rating</label>
-                            <ul class="d-flex">
-                                <li>
-                                    <i data-id="0" class="fa-regular fa-star"></i>
-                                </li>
-                                <li>
-                                    <i data-id="1" class="fa-regular fa-star"></i>
-                                </li>
-                                <li>
-                                    <i data-id="2" class="fa-regular fa-star"></i>
-                                </li>
-                                <li>
-                                    <i data-id="3" class="fa-regular fa-star"></i>
-                                </li>
-                                <li>
-                                    <i data-id="4" class="fa-regular fa-star"></i>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div>
-                            <label for="">Your review</label>
-                            <textarea name="content" id="" cols="30" rows="10"></textarea>
-                            <p class="product-detail__tab-reviews-form--invalid-feedback"></p>
-                        </div>
-
-
-                        <div>
-                            <label for="">Name *</label>
-                            <input type="text" name="name">
-                            <p class="product-detail__tab-reviews-form--invalid-feedback"></p>
-                        </div>
-
-                        <div>
-                            <label for="">Email *</label>
-                            <input type="text" name="email">
-                            <p class="product-detail__tab-reviews-form--invalid-feedback"></p>
-                        </div>
-
-                        <button name="submit" type="submit">SUBMIT</button>
-                    </form>
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-    <div class="product-detail__related">
-        <h1>RELATED PRODUCTS</h1>
-        <div class="featured-product-list row" id="">
-            <!-- class="col-xl-3 col-md-6 featured-product__item--list" -->
-
-        </div>
-    </div>
-
-
 </article>
 
-<div class="product-modal" id="productModal">
-    <div class="product-modal__content">
-        <img src="" alt="">
-        <div class="product-modal__content-icon"><i class="fa-solid fa-xmark"></i></div>
-    </div>
-</div>
 
 <footer class="footer">
     <div class="footer-top container-fluid">

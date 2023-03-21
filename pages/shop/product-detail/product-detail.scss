@@ -3,8 +3,18 @@
 @import "/scss/mixins";
 
 /* product detail style start*/
+
 .product-detail {
     font-family: $font-family;
+
+    &__note {
+        color: #fff;
+        background-color: $primary-color;
+        padding: 6px 12px;
+        border-radius: 6px;
+        width: 220px;
+        display: none;
+    }
 
     &__path {
         font-size: 12px;
@@ -333,7 +343,6 @@
             &--date {
                 color: $text-color;
                 font-weight: 500;
-                margin-left: 8px;
             }
 
             &--content {

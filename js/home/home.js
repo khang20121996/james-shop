@@ -103,7 +103,7 @@ function hanldeBrandsSlick() {
 }
 
 //
-export function handleAddToCart(product, toastElement, quantity) {
+export function handleAddToCart(product, toastElement) {
   if (toastElement) {
     toastElement.style.display = "block";
     setTimeout(() => {
@@ -206,7 +206,9 @@ export function renderFeatureProduct(
     // set event when click add to cart
     addToCartElement.addEventListener("click", (e) => {
       e.preventDefault();
-      handleAddToCart(product, toastElement);
+      const newProduct = { ...product };
+      newProduct.quantityCart = 1;
+      handleAddToCart(newProduct, toastElement);
     });
 
     return productElement;
@@ -261,49 +263,48 @@ export function renderProduct(productList, productListElement) {
   }
 }
 
-function main(productList) {
-  const productListElement = document.querySelector(
-    ".home .featured-product-list"
-  );
-  const newProductListElement = document.querySelector(
-    ".products .new-product__list"
-  );
-  const saleProductListElement = document.querySelector(
-    ".products .sale-product__list"
-  );
-  const bestSellProductListElement = document.querySelector(
-    ".products .best-sell-product__list"
-  );
-  const saleProductList = productList.filter(
-    (product) => product.discountPrice > 0
-  );
-  const bestSellProductList = productList.filter(
-    (product) => product.rating === 5
-  );
-
-  renderFeatureProduct(productList, productListElement);
-  renderProduct(productList, newProductListElement);
-  renderProduct(saleProductList, saleProductListElement);
-  renderProduct(bestSellProductList, bestSellProductListElement);
-  handleAutoNavSlider();
-  handleFeatureProdSlick();
-  hanldeBrandsSlick();
-  console.log("Home loaded");
-}
-
-(async () => {
+async function main() {
   // call API fetch data
   let productList;
   try {
     productList = await productApi.getAll();
+    const productListElement = document.querySelector(
+      ".home .featured-product-list"
+    );
+    const newProductListElement = document.querySelector(
+      ".products .new-product__list"
+    );
+    const saleProductListElement = document.querySelector(
+      ".products .sale-product__list"
+    );
+    const bestSellProductListElement = document.querySelector(
+      ".products .best-sell-product__list"
+    );
+    const saleProductList = productList.filter(
+      (product) => product.discountPrice > 0
+    );
+    const bestSellProductList = productList.filter(
+      (product) => product.rating === 5
+    );
+
+    renderFeatureProduct(productList, productListElement);
+    renderProduct(productList, newProductListElement);
+    renderProduct(saleProductList, saleProductListElement);
+    renderProduct(bestSellProductList, bestSellProductListElement);
+    handleAutoNavSlider();
+    handleFeatureProdSlick();
+    hanldeBrandsSlick();
+    console.log("Home loaded");
   } catch (error) {
     console.log(error, "can't fetch data");
   }
+}
 
+(() => {
   const location = window.location.pathname;
   if (location === "/") {
     setTimeout(() => {
-      main(productList);
+      main();
     }, 3000);
   }
 })();

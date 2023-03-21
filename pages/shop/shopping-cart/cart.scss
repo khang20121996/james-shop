@@ -64,6 +64,12 @@
             background-color: transparent;
             border: none;
             margin-left: 16px;
+
+            @include medium-up {
+                &:hover {
+                    color: $primary-color;
+                }
+            }
         }
     }
 

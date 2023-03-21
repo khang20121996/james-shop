@@ -14,10 +14,12 @@
         <div class="d-flex ms-auto header-inner__icon align-items-center">
             <div class="header-inner__icon-search" onclick="">
                 <i class="fa-solid fa-magnifying-glass icon"></i>
-                <div class="header-inner__icon-search--input d-flex align-items-center show">
+                <form class="header-inner__icon-search--input d-flex align-items-center show">
                     <input type="text" placeholder="Search product..." />
-                    <i class="fa-solid fa-magnifying-glass ms-auto"></i>
-                </div>
+                    <button type="submit">
+                        <i class="fa-solid fa-magnifying-glass ms-auto"></i>
+                    </button>
+                </form>
             </div>
 
             <div class="header-inner__icon-account" onclick="">
@@ -25,12 +27,12 @@
                 <div class="header-inner__icon-account--list show">
                     <div><a href="#">My Account</a></div>
                     <div><a href="#">Wishlist</a></div>
-                    <div><a href="#">Shopping Cart</a></div>
+                    <div><a href="/shop/cart">Shopping Cart</a></div>
                     <div><a href="#">Checkout</a></div>
                 </div>
             </div>
 
-            <div class="header-inner__icon-cart" onclick="">
+            <!-- <div class="header-inner__icon-cart" onclick="">
                 <div class="header-inner__icon-cart--detail show">
                     <p class="header-inner__icon-cart--detail-note">You have no items in your shopping cart!</p>
                     <template id="cartItem">
@@ -54,7 +56,6 @@
 
                             <div>
                                 <p class="cart__item-mobile-total"></p>
-                                <button class="cart__item--delete"><i class="fa-solid fa-xmark"></i></button>
                             </div>
                         </li>
                     </template>
@@ -69,7 +70,7 @@
                 </div>
                 <i class="fa-solid fa-bag-shopping icon"></i>
                 <p class="header-inner__icon-cart--quantity">0</p>
-            </div>
+            </div> -->
 
             <div class="header-inner__icon-menu align-items-center" onclick="">
                 <div>MENU</div>
@@ -119,137 +120,64 @@
         </div>
     </div>
 
+    <template id="cartItemPc">
+        <li class="col-12 ">
+            <div class="d-flex cart__item">
+                <div class="col-6 d-flex">
+                    <img class="cart__item-img" src="" alt="imgCart">
+                    <p class="cart__item-name"></p>
+                </div>
+                <div class="col-2">
+                    <p class="cart__item-price">
+
+                    </p>
+                </div>
+                <div class="col-2">
+                    <p class="cart__item-quantity">
+
+                    </p>
+                </div>
+                <div class="col-2 d-flex justify-content-end">
+                    <p class="cart__item-total"></p>
+                    <button class="cart__item--delete"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+            </div>
+        </li>
+    </template>
     <ul class="cart__list-pc row">
-        <li class="col-12 ">
-            <div class="d-flex cart__item">
-                <div class="col-6 d-flex">
-                    <img class="cart__item-img" src="/images/home/17.jpg" alt="imgCart">
-                    <p class="cart__item-name">Nike Air Force</p>
-                </div>
-                <div class="col-2">
-                    <p class="cart__item-price">
-                        66.00$
-                    </p>
-                </div>
-                <div class="col-2">
-                    <p class="cart__item-quantity">
-                        1
-                    </p>
-                </div>
-                <div class="col-2">
-                    <p class="cart__item-total">66.00$</p>
-                </div>
-            </div>
-        </li>
 
-        <li class="col-12 ">
-            <div class="d-flex cart__item">
-                <div class="col-6 d-flex">
-                    <img class="cart__item-img" src="/images/home/17.jpg" alt="imgCart">
-                    <p class="cart__item-name">Nike Air Force</p>
-                </div>
-                <div class="col-2">
-                    <p class="cart__item-price">
-                        66.00$
-                    </p>
-                </div>
-                <div class="col-2">
-                    <p class="cart__item-quantity">
-                        1
-                    </p>
-                </div>
-                <div class="col-2">
-                    <p class="cart__item-total">66.00$</p>
-                </div>
-            </div>
-        </li>
-
-        <li class="col-12 ">
-            <div class="d-flex cart__item">
-                <div class="col-6 d-flex">
-                    <img class="cart__item-img" src="/images/home/17.jpg" alt="imgCart">
-                    <p class="cart__item-name">Nike Air Force</p>
-                </div>
-                <div class="col-2">
-                    <p class="cart__item-price">
-                        66.00$
-                    </p>
-                </div>
-                <div class="col-2">
-                    <p class="cart__item-quantity">
-                        1
-                    </p>
-                </div>
-                <div class="col-2">
-                    <p class="cart__item-total">66.00$</p>
-                </div>
-            </div>
-        </li>
     </ul>
 
+
+    <template id="cartItemMobile">
+        <li class="cart__item-mobile justify-content-between">
+            <div class="d-flex">
+                <img src="" alt="Image" class="cart__item-mobile-img">
+                <div>
+                    <p class="cart__item-mobile-name"></p>
+                    <div class="d-flex">
+                        <p class="cart__item-mobile-quantity">
+
+                        </p>
+                        <p class="cart__item-mobile-price">
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <p class="cart__item-mobile-total"></p>
+                <button class="cart__item--delete"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+        </li>
+    </template>
     <ul class="cart__list-mobile">
-        <li class="d-flex cart__item-mobile justify-content-between">
-            <div class="d-flex">
-                <img src="/images/home/17.jpg" alt="">
-                <div>
-                    <p class="cart__item-mobile-name">Nike Air Force</p>
-                    <div class="d-flex">
-                        <p class="cart__item-mobile-quantity">
-                            x1
-                        </p>
-                        <p class="cart__item-mobile-price">
-                            66.00$
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <p class="cart__item-mobile-total">66.00$</p>
-            </div>
-        </li>
-        <li class="d-flex cart__item-mobile justify-content-between">
-            <div class="d-flex">
-                <img src="/images/home/17.jpg" alt="">
-                <div>
-                    <p class="cart__item-mobile-name">Nike Air Force</p>
-                    <div class="d-flex">
-                        <p class="cart__item-mobile-quantity">
-                            x1
-                        </p>
-                        <p class="cart__item-mobile-price">
-                            66.00$
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <p class="cart__item-mobile-total">66.00$</p>
-            </div>
-        </li>
-        <li class="d-flex cart__item-mobile justify-content-between">
-            <div class="d-flex">
-                <img src="/images/home/17.jpg" alt="">
-                <div>
-                    <p class="cart__item-mobile-name">Nike Air Force</p>
-                    <div class="d-flex">
-                        <p class="cart__item-mobile-quantity">
-                            x1
-                        </p>
-                        <p class="cart__item-mobile-price">
-                            66.00$
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <p class="cart__item-mobile-total">66.00$</p>
-            </div>
-        </li>
+
     </ul>
 
     <div class="cart__total d-flex justify-content-end align-items-center ">
         <h3>TOTAL:</h3>
-        <span class=" cart__total-price">128.00$</span>
+        <span class="cart__total-price"></span>
     </div>
 
     <div class="cart__checkout">

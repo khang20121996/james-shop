@@ -1,0 +1,27 @@
+@import "/scss/variables";
+@import "/scss/mixins";
+
+.search-form {
+    position: relative;
+    input {
+        width: 360px;
+        padding: 6px 12px;
+        font-size: 13px;
+        border: $border-color 1px solid;
+        outline: none;
+    }
+
+    button {
+        border: none;
+        position: absolute;
+        top: 4px;
+        left: 328px;
+        background-color: transparent;
+    }
+}
+
+.search-notification {
+    font-size: 12px;
+    margin-top: 16px;
+    display: none;
+}
