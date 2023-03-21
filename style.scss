@@ -25,17 +25,11 @@ ul {
   padding: 0 8px;
   position: relative;
 
-  &:hover {
-    .icon {
-      color: red;
-    }
-
-    .show {
-      visibility: visible;
-      transform: translateY(40px);
-      transition: all 0.3s ease;
-      opacity: 1;
-    }
+  .show {
+    visibility: visible;
+    transform: translateY(40px);
+    transition: all 0.3s ease;
+    opacity: 1;
   }
 
   // &:active {
@@ -217,10 +211,10 @@ ul {
 
       &-menu {
         @extend %icon;
-        display: none;
+        display: flex;
 
-        @include medium-down {
-          display: flex;
+        @include medium-up {
+          display: none;
         }
 
         div {
@@ -230,10 +224,11 @@ ul {
         }
 
         &--list {
+          @extend %icon-hover;
           @include medium-down {
             width: 260px;
           }
-          @extend %icon-hover;
+
           a {
             display: block;
             font-size: 14px;

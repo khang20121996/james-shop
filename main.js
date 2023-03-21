@@ -221,21 +221,43 @@ function handleSearchProduct() {
   }
 }
 
-function toggleIconsHeader() {
-  if (window.innerWidth <= 768) {
-    const searchElement = document.querySelector(".header-inner__icon-search");
-    const showElement = document.querySelector(
-      ".header-inner__icon-search--input"
-    );
-
-    if (searchElement) {
-      searchElement.addEventListener("click", (e) => {
-        if (e.target.tagName === "INPUT") return;
-        console.log(e.target.tagName);
+function handleClickIconsHeader(clickElement, showElement) {
+  if (clickElement) {
+    clickElement.addEventListener("click", (e) => {
+      e.stopPropagation();
+      console.log(e.target);
+      if (e.target.tagName === "I" || e.target.tagName === "DIV") {
         showElement.classList.toggle("show");
-      });
-    }
+      }
+    });
   }
+}
+
+function toggleIconsHeader() {
+  const searchElement = document.querySelector(".header-inner__icon-search");
+  const searchShowElement = document.querySelector(
+    ".header-inner__icon-search--input"
+  );
+
+  const accountElement = document.querySelector(".header-inner__icon-account");
+  const accountShowElement = document.querySelector(
+    ".header-inner__icon-account--list"
+  );
+
+  const cartElement = document.querySelector(".header-inner__icon-cart");
+  const cartShowElement = document.querySelector(
+    ".header-inner__icon-cart--detail"
+  );
+
+  const menuElement = document.querySelector(".header-inner__icon-menu");
+  const menuShowElement = document.querySelector(
+    ".header-inner__icon-menu--list"
+  );
+
+  handleClickIconsHeader(searchElement, searchShowElement);
+  handleClickIconsHeader(accountElement, accountShowElement);
+  handleClickIconsHeader(cartElement, cartShowElement);
+  handleClickIconsHeader(menuElement, menuShowElement);
 }
 
 window.addEventListener("load", () => {
