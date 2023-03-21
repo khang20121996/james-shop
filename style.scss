@@ -38,18 +38,18 @@ ul {
     }
   }
 
-  &:active {
-    .icon {
-      color: red;
-    }
+  // &:active {
+  //   .icon {
+  //     color: red;
+  //   }
 
-    .show {
-      visibility: visible;
-      transform: translateY(40px);
-      transition: all 0.3s ease;
-      opacity: 1;
-    }
-  }
+  //   .show {
+  //     visibility: visible;
+  //     transform: translateY(40px);
+  //     transition: all 0.3s ease;
+  //     opacity: 1;
+  //   }
+  // }
 }
 
 %icon-hover {
@@ -189,9 +189,6 @@ ul {
             width: 260px;
           }
           @extend %icon-hover;
-
-          p {
-          }
 
           h5 {
             font-weight: 600;
