@@ -221,19 +221,19 @@ function handleSearchProduct() {
   }
 }
 
-function toggleIconsHeader() {
-  const searchElement = document.querySelector(".header-inner__icon-search");
-  const showElement = document.querySelector(
-    ".header-inner__icon-search--input"
-  );
+// function toggleIconsHeader() {
+//   const searchElement = document.querySelector(".header-inner__icon-search");
+//   const showElement = document.querySelector(
+//     ".header-inner__icon-search--input"
+//   );
 
-  if (searchElement) {
-    searchElement.addEventListener("click", () => {
-      console.log("click");
-      showElement.classList.toggle("show");
-    });
-  }
-}
+//   if (searchElement) {
+//     searchElement.addEventListener("click", () => {
+//       console.log("click");
+//       showElement.classList.toggle("show");
+//     });
+//   }
+// }
 
 window.addEventListener("load", () => {
   handlePreloader();
@@ -247,7 +247,7 @@ function main() {
   handleCircleSlider();
   renderShoppingCart(listCart, listCart?.length);
   handleSearchProduct();
-  toggleIconsHeader();
+  // toggleIconsHeader();
   console.log("Main loaded");
   console.log(window.innerWidth);
 }
