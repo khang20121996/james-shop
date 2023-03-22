@@ -225,12 +225,14 @@ function handleClickIconsHeader(clickElement, showElement) {
   if (clickElement) {
     clickElement.addEventListener("click", (e) => {
       e.stopPropagation();
-      console.log(e.target);
       if (e.target.tagName === "I" || e.target.tagName === "DIV") {
         showElement.classList.toggle("show");
       }
     });
   }
+  window.addEventListener("click", (e) => {
+    showElement.classList.remove("show");
+  });
 }
 
 function toggleIconsHeader() {
@@ -274,7 +276,6 @@ function main() {
   handleSearchProduct();
   toggleIconsHeader();
   console.log("Main loaded");
-  console.log(window.innerWidth);
 }
 
 setTimeout(() => {

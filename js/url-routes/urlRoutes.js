@@ -59,7 +59,7 @@ const urlRoutes = {
 
 const urlRoute = (event) => {
   event = event || window.event;
-  // event.preventDefault();
+  event.preventDefault();
   window.history.pushState({}, "", event.target.href);
   urlLocationHanler();
 };
@@ -73,18 +73,17 @@ const urlLocationHanler = async () => {
   const route = urlRoutes[location] || urlRoutes[404];
   const html = await fetch(route.template).then((response) => response.text());
   document.getElementById("root").innerHTML = html;
+  console.log("router loaded");
 };
 
 window.onpopstate = urlLocationHanler;
 window.route = urlRoute;
+urlLocationHanler();
 
-(() => {
-  window.onpageshow = function (event) {
-    if (event.persisted) {
-      window.location.reload();
-    }
-  };
-
-  urlLocationHanler();
-  console.log("router loaded");
-})();
+// (() => {
+//   window.onpageshow = function (event) {
+//     if (event.persisted) {
+//       window.location.reload();
+//     }
+//   };
+// })();

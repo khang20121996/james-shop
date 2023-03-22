@@ -5,7 +5,7 @@
 
     <nav class="header-inner__menu">
       <a href="/">Home</a>
-      <a href="/shop">Shop</a>
+      <a href="/shop?_sort=&_order=&_page=1&_limit=12&brand_like=&price_gte=0&price_lte=250">Shop</a>
       <a href="/blog">Blog</a>
       <a href="/about">About Us</a>
     </nav>
@@ -76,7 +76,7 @@
         <div>MENU</div>
         <nav class="header-inner__icon-menu--list">
           <div><a href="/">Home</a></div>
-          <div><a href="/shop">Shop</a></div>
+          <div><a href="/shop?_sort=&_order=&_page=1&_limit=12&brand_like=&price_gte=0&price_lte=250">Shop</a></div>
           <div><a href="/blog">Blog</a></div>
           <div><a href="/about">About Us</a></div>
         </nav>
@@ -160,49 +160,23 @@
       <h2>From</h2>
       <h1>THE BLOG</h1>
     </div>
-    <div class="row">
+    <template id="homeBlogTemplate">
       <div class="col-lg-4 col-12">
         <div class="blog-item">
           <div class="blog-item__img">
-            <a href="#">
-              <img src="/images/home/blog.jpg" alt="blog">
+            <a href="" class="blog-item__link">
+              <img src="" alt="blog">
             </a>
           </div>
-          <a href="/" class="blog-item__name">blog image post</a>
-          <div class="blog-item__date"><span>Mar</span> <span>10</span></div>
-          <p class="blog-item__description">Donec vitae hendrerit arcu, sit amet faucibus nisl. Cras pretium arcu ex.
-            Aenean posuere libero eu augue condimentum rhoncus.</p>
-          <a href="/" class="blog-item__readmore">read more</a>
+          <a href="" class="blog-item__name blog-item__link"></a>
+          <div class="blog-item__date"><span></span></div>
+          <p class="blog-item__description"></p>
+          <a href="" class="blog-item__readmore blog-item__link">read more</a>
         </div>
       </div>
-      <div class="col-lg-4 col-12">
-        <div class="blog-item">
-          <div class="blog-item__img">
-            <a href="#">
-              <img src="/images/home/blog.jpg" alt="blog">
-            </a>
-          </div>
-          <a href="/" class="blog-item__name">blog image post</a>
-          <div class="blog-item__date"><span>Mar</span> <span>10</span></div>
-          <p class="blog-item__description">Donec vitae hendrerit arcu, sit amet faucibus nisl. Cras pretium arcu ex.
-            Aenean posuere libero eu augue condimentum rhoncus.</p>
-          <a href="/" class="blog-item__readmore">read more</a>
-        </div>
-      </div>
-      <div class="col-lg-4 col-12">
-        <div class="blog-item">
-          <div class="blog-item__img">
-            <a href="#">
-              <img src="/images/home/blog.jpg" alt="blog">
-            </a>
-          </div>
-          <a href="/" class="blog-item__name">blog image post</a>
-          <div class="blog-item__date"><span>Mar</span> <span>10</span></div>
-          <p class="blog-item__description">Donec vitae hendrerit arcu, sit amet faucibus nisl. Cras pretium arcu ex.
-            Aenean posuere libero eu augue condimentum rhoncus.</p>
-          <a href="/" class="blog-item__readmore">read more</a>
-        </div>
-      </div>
+    </template>
+    <div class="row blog-list">
+
     </div>
   </section>
 

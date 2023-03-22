@@ -31,3 +31,15 @@ export const productApi = {
     return axiosClient.get(url);
   },
 };
+
+export const blogApi = {
+  getAll(params) {
+    const url = "blogs";
+    return axiosClient.get(url, { params });
+  },
+
+  getById(id) {
+    const url = `blogs/${id}`;
+    return axiosClient.get(url);
+  },
+};

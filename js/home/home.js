@@ -1,4 +1,4 @@
-import { productApi } from "../api/productApi";
+import { blogApi, productApi } from "../api/productApi";
 import {
   hideSaleElement,
   setImage,
@@ -263,11 +263,59 @@ export function renderProduct(productList, productListElement) {
   }
 }
 
+function handleSliderButton() {
+  const shopNowButtonList = document.querySelectorAll(
+    ".home-slider-list__item button"
+  );
+  if (shopNowButtonList) {
+    shopNowButtonList.forEach((shopNowButton) => {
+      shopNowButton.addEventListener("click", () => {
+        window.location.href =
+          "/shop?_sort=&_order=&_page=1&_limit=12&brand_like=&price_gte=0&price_lte=250";
+      });
+    });
+  }
+}
+
+function createBlogItem(blog) {
+  if (!blog) return;
+  const template = document.getElementById("homeBlogTemplate");
+  if (template) {
+    const blogItem = template.content.firstElementChild.cloneNode(true);
+
+    setImage(blogItem, ".blog-item__img img", blog?.thumbnail);
+    setTextContent(blogItem, ".blog-item__name", blog?.title);
+    setTextContent(blogItem, ".blog-item__date", blog?.date);
+    setTextContent(
+      blogItem,
+      ".blog-item__description",
+      `${blog?.content[0].slice(0, 200)} ...`
+    );
+    // setLink(blogItem, ".blog-item__link")
+
+    return blogItem;
+  }
+}
+
+function renderBlog(blogList) {
+  if (!blogList) return;
+
+  const blogListElement = document.querySelector(".blog .blog-list");
+  if (blogListElement) {
+    blogList.forEach((blog) => {
+      const blogElement = createBlogItem(blog);
+      blogListElement.appendChild(blogElement);
+    });
+  }
+}
+
 async function main() {
   // call API fetch data
   let productList;
+  let blogList;
   try {
     productList = await productApi.getAll();
+    blogList = await blogApi.getAll();
     const productListElement = document.querySelector(
       ".home .featured-product-list"
     );
@@ -287,13 +335,25 @@ async function main() {
       (product) => product.rating === 5
     );
 
+    // render feature products
     renderFeatureProduct(productList, productListElement);
+
+    // render new products
     renderProduct(productList, newProductListElement);
+
+    // render sale products
     renderProduct(saleProductList, saleProductListElement);
+
+    // render best selling
     renderProduct(bestSellProductList, bestSellProductListElement);
+
+    // render blog
+    renderBlog(blogList.slice(0, 3));
+
     handleAutoNavSlider();
     handleFeatureProdSlick();
     hanldeBrandsSlick();
+    handleSliderButton();
     console.log("Home loaded");
   } catch (error) {
     console.log(error, "can't fetch data");
