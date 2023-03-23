@@ -225,8 +225,16 @@ function handleClickIconsHeader(clickElement, showElement) {
   if (clickElement) {
     clickElement.addEventListener("click", (e) => {
       e.stopPropagation();
+
       if (e.target.tagName === "I" || e.target.tagName === "DIV") {
-        showElement.classList.toggle("show");
+        if (
+          showElement.classList.contains("show") &&
+          !showElement.contains(e.target)
+        ) {
+          showElement.classList.remove("show");
+        } else {
+          showElement.classList.add("show");
+        }
       }
     });
   }
@@ -234,6 +242,7 @@ function handleClickIconsHeader(clickElement, showElement) {
   document.addEventListener("click", (e) => {
     if (!showElement.contains(e.target)) {
       showElement.classList.remove("show");
+      console.log("click");
     }
   });
 }
