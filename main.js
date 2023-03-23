@@ -230,8 +230,11 @@ function handleClickIconsHeader(clickElement, showElement) {
       }
     });
   }
-  window.addEventListener("click", (e) => {
-    showElement.classList.remove("show");
+
+  document.addEventListener("click", (e) => {
+    if (!showElement.contains(e.target)) {
+      showElement.classList.remove("show");
+    }
   });
 }
 
